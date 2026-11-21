@@ -143,7 +143,6 @@ svg#map{display:block;width:100%;min-width:900px;height:auto}
 .st:hover .dot{stroke-width:6}
 .st:focus{outline:none}
 .st:focus-visible .halo{opacity:1;stroke:var(--accent)}
-.st.dim{opacity:.35}
 .maphint{padding:14px 20px;font-size:14px;color:var(--muted);border-top:1px solid var(--hair);background:var(--paper)}
 
 /* ---------- "Learn now" card ---------- */
@@ -225,8 +224,6 @@ html.drawer-lock{overflow:hidden}
 .rel{display:flex;flex-direction:column;gap:8px}
 .rel-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;padding:10px 12px;border:1px solid var(--hair);border-radius:12px}
 .rel-row p{margin:0;flex-basis:100%;font-size:14px}
-.links-row{display:grid;grid-template-columns:90px minmax(0,1fr);gap:8px;align-items:start;font-size:13.5px}
-.links-row > span{color:var(--muted);padding-top:4px}
 .pn-actions{display:flex;flex-wrap:wrap;gap:8px;padding-top:14px;border-top:1px solid var(--hair)}
 .btn.done-on{background:var(--ok-bg);border-color:var(--ok);color:var(--ok)}
 
@@ -370,8 +367,6 @@ html.drawer-lock{overflow:hidden}
 .sh-nav a:hover{color:var(--ink)}
 .sh-nav a[aria-current="true"]{color:var(--ink);background:var(--paper-2)}
 .sh-tools{justify-self:end;display:flex;align-items:center;gap:10px}
-.sh-site{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:8px 14px;border:1px solid var(--hair-2);border-radius:999px;white-space:nowrap;transition:border-color .15s,color .15s}
-.sh-site:hover{color:var(--ink);border-color:var(--ink)}
 /* theme switch: a pill with a sliding knob, like on denys-holenko.com */
 .theme-sw{position:relative;width:54px;height:30px;flex:none;border-radius:999px;border:1px solid var(--hair-2);background:var(--card);cursor:pointer;padding:0}
 .theme-sw .knob{position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:var(--accent);transition:transform .25s}
