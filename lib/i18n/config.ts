@@ -12,7 +12,10 @@ export const DEFAULT_TARGET: Lang = "fr";
  * Language pairs (native → target) that have a working map. Content is written for a specific
  * native language, so a map exists per pair, not per target. Other pairs show a "coming soon" page.
  */
-export const AVAILABLE_PAIRS: readonly (readonly [native: Lang, target: Lang])[] = [["uk", "fr"]];
+export const AVAILABLE_PAIRS: readonly (readonly [native: Lang, target: Lang])[] = [
+  ["uk", "fr"],
+  ["fr", "fr"],
+];
 
 export const hasMap = (native: Lang, target: Lang) => AVAILABLE_PAIRS.some(([n, t]) => n === native && t === target);
 

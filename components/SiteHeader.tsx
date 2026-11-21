@@ -22,7 +22,8 @@ const THEME_KEY = "frmap-theme";
 type Props = { native: Lang; target: Lang; sections: boolean };
 
 export default function SiteHeader({ native, target, sections }: Props) {
-  const d = getDict(native).site;
+  const dict = getDict(native);
+  const d = dict.site;
   const labels: Record<(typeof SECTION_IDS)[number], string> = {
     now: d.nav.now,
     "map-section": d.nav.map,
@@ -98,6 +99,7 @@ export default function SiteHeader({ native, target, sections }: Props) {
             ))}
           </nav>
         )}
+        {sections && <StudyTimer label={dict.map.timerAria} />}
         <div className="sh-tools">
           <LangSwitch native={native} target={target} />
           <button
@@ -119,6 +121,24 @@ export default function SiteHeader({ native, target, sections }: Props) {
         </div>
       </div>
     </header>
+  );
+}
+
+/**
+ * Study timer pill. Only the static shell is rendered here: lib/grammar-app.js fills in the time,
+ * the play/pause icon and the status (shown as a tooltip), and toggles the "on" class.
+ * Elements have no React children, so React re-renders never overwrite those updates.
+ */
+function StudyTimer({ label }: { label: string }) {
+  return (
+    <div className="tmr" id="tmr" role="group" aria-label={label}>
+      <span className="tmr-time">
+        <i aria-hidden="true" />
+        <span id="tmrTime" />
+      </span>
+      <span className="sr-only" id="tmrSub" />
+      <button type="button" className="tmr-btn" id="tmrBtn" />
+    </div>
   );
 }
 
