@@ -1,3 +1,130 @@
-// Статична розмітка сторінки (перенесена з grammaire_francaise.html).
-// Динамічні частини заповнює lib/grammar-app.js.
-export const markup = "<div class=\"wrap\">\n  <header>\n    <div class=\"title\">\n      <h1>Карта французької граматики</h1>\n      <p>30 тем у 6 розділах, розкладених на 5 етапів. Рядок карти — етап маршруту, кольорова лінія — розділ, пунктир — що варто знати перед темою.</p>\n    </div>\n    <div class=\"prog\">\n      <div class=\"prog-top\"><span class=\"label\">Пройдено</span><span class=\"prog-num\" id=\"progNum\">0 / 30</span><button class=\"btn primary\" id=\"nextBtn\" type=\"button\">Вчити зараз →</button></div>\n      <div class=\"strip\" id=\"strip\" aria-label=\"Прогрес по темах\"></div>\n      <div class=\"stats\"><span>Сьогодні <b id=\"stToday\">0 хв</b> <span id=\"stGoal\"></span></span><span>7 днів <b id=\"stWeek\">0 хв</b></span><span>Всього <b id=\"stTotal\">0 хв</b></span></div>\n    </div>\n  </header>\n\n  <details class=\"gloss\" id=\"gloss\">\n    <summary><b>Довідник термінів</b><span>частини мови, особи, ролі в реченні, дієслівні терміни · українською та французькою</span></summary>\n    <div class=\"gl-body\">\n      <div class=\"gl-col\">\n        <h3>Особи (les personnes)</h3>\n        <div class=\"tw\"><table>\n          <tr><th>Українською</th><th>Français</th><th>Займенник</th><th>Переклад</th></tr>\n          <tr><td>1-ша особа однини</td><td>1<sup>re</sup> personne du singulier</td><td><i>je</i></td><td>я</td></tr>\n          <tr><td>2-га особа однини</td><td>2<sup>e</sup> personne du singulier</td><td><i>tu</i></td><td>ти</td></tr>\n          <tr><td>3-тя особа однини</td><td>3<sup>e</sup> personne du singulier</td><td><i>il, elle, on</i></td><td>він, вона, «люди / ми»</td></tr>\n          <tr><td>1-ша особа множини</td><td>1<sup>re</sup> personne du pluriel</td><td><i>nous</i></td><td>ми</td></tr>\n          <tr><td>2-га особа множини</td><td>2<sup>e</sup> personne du pluriel</td><td><i>vous</i></td><td>ви, ввічливе «Ви»</td></tr>\n          <tr><td>3-тя особа множини</td><td>3<sup>e</sup> personne du pluriel</td><td><i>ils, elles</i></td><td>вони</td></tr>\n        </table></div>\n        <p><b>ils</b> — для чоловічої або змішаної групи, <b>elles</b> — лише для жіночої. <b>on</b> граматично 3-тя особа однини (on parle), хоча в розмові означає «ми». Ввічливе <b>vous</b> до однієї людини — дієслово в множині, а прикметник за змістом: Vous êtes prêt<b>e</b>, Madame ?</p>\n        <h3>Рід і число</h3>\n        <div class=\"tw\"><table>\n          <tr><th>Українською</th><th>Français</th><th>Скорочення</th></tr>\n          <tr><td>чоловічий рід</td><td>le masculin</td><td>m., masc.</td></tr>\n          <tr><td>жіночий рід</td><td>le féminin</td><td>f., fém.</td></tr>\n          <tr><td>однина</td><td>le singulier</td><td>sg.</td></tr>\n          <tr><td>множина</td><td>le pluriel</td><td>pl.</td></tr>\n        </table></div>\n        <p>Середнього роду у французькій немає: кожен іменник або чоловічого, або жіночого.</p>\n      </div>\n      <div class=\"gl-col\">\n        <h3>Частини мови (les classes de mots)</h3>\n        <div class=\"tw\"><table>\n          <tr><th>Українською</th><th>Français</th><th>Приклади</th></tr>\n          <tr><td>іменник</td><td>le nom</td><td><i>maison, Paris, liberté</i></td></tr>\n          <tr><td>прикметник</td><td>l'adjectif</td><td><i>grand, rouge, heureux</i></td></tr>\n          <tr><td>дієслово</td><td>le verbe</td><td><i>parler, être, finir</i></td></tr>\n          <tr><td>прислівник</td><td>l'adverbe</td><td><i>vite, bien, très, souvent</i></td></tr>\n          <tr><td>займенник</td><td>le pronom</td><td><i>je, le, lui, qui, en, y</i></td></tr>\n          <tr><td>детермінант</td><td>le déterminant</td><td><i>le, un, du, mon, ce, quel</i></td></tr>\n          <tr><td>прийменник</td><td>la préposition</td><td><i>à, de, pour, avec, sur</i></td></tr>\n          <tr><td>сполучник</td><td>la conjonction</td><td><i>et, mais, que, quand, si</i></td></tr>\n          <tr><td>вигук</td><td>l'interjection</td><td><i>oh, hélas, aïe</i></td></tr>\n        </table></div>\n        <p><b>Детермінант</b> — слово перед іменником, що його «вводить»: артиклі (le, un, du), присвійні (mon, ses), вказівні (ce, ces), питальні (quel). В українській такої окремої частини мови немає: «мій» у нас займенник, а французьке <i>mon</i> — детермінант. Займенник замінює іменник: <i>mon livre</i> → <i>le mien</i>.</p>\n        <p>Види артиклів: означений — <i>l'article défini</i> (le), неозначений — <i>indéfini</i> (un), партитивний — <i>partitif</i> (du).</p>\n      </div>\n      <div class=\"gl-col\">\n        <h3>Ролі в реченні (les fonctions)</h3>\n        <div class=\"tw\"><table>\n          <tr><th>Українською</th><th>Français</th><th>Приклад (виділене)</th></tr>\n          <tr><td>підмет</td><td>le sujet</td><td><i><b>Marie</b> lit.</i></td></tr>\n          <tr><td>прямий додаток</td><td>le COD — complément d'objet direct</td><td><i>Je lis <b>un livre</b>.</i> (без прийменника)</td></tr>\n          <tr><td>непрямий додаток</td><td>le COI — complément d'objet indirect</td><td><i>Je parle <b>à Marie</b>.</i> (з à або de)</td></tr>\n          <tr><td>обставина</td><td>le complément circonstanciel</td><td><i><b>Hier</b>, je suis allé <b>à Lyon</b>.</i></td></tr>\n          <tr><td>означення</td><td>l'épithète</td><td><i>une robe <b>rouge</b></i></td></tr>\n          <tr><td>іменна частина присудка</td><td>l'attribut du sujet</td><td><i>Elle est <b>contente</b>.</i></td></tr>\n          <tr><td>антецедент</td><td>l'antécédent</td><td><i>le <b>livre</b> que je lis</i> — слово, яке заміщує qui / que / dont</td></tr>\n          <tr><td>головне речення</td><td>la proposition principale</td><td><i><b>Je pense</b> qu'il viendra.</i></td></tr>\n          <tr><td>підрядне речення</td><td>la proposition subordonnée</td><td><i>Je pense <b>qu'il viendra</b>.</i></td></tr>\n        </table></div>\n        <p>Як знайти COD: після дієслова спитай «кого? що?» без прийменника. COI відповідає на «кому? чому? про що?» і має à або de.</p>\n      </div>\n      <div class=\"gl-col\">\n        <h3>Дієслово (le verbe)</h3>\n        <div class=\"tw\"><table>\n          <tr><th>Українською</th><th>Français</th><th>Приклад</th></tr>\n          <tr><td>інфінітив, неозначена форма</td><td>l'infinitif</td><td><i>parler, finir, prendre</i></td></tr>\n          <tr><td>основа / закінчення</td><td>le radical / la terminaison</td><td><i>parl- / -ons</i></td></tr>\n          <tr><td>дієвідмінювання</td><td>la conjugaison</td><td><i>je parle, tu parles…</i></td></tr>\n          <tr><td>група дієслів</td><td>le groupe (1<sup>er</sup>, 2<sup>e</sup>, 3<sup>e</sup>)</td><td><i>parler / finir / prendre</i></td></tr>\n          <tr><td>допоміжне дієслово</td><td>l'auxiliaire</td><td><i>avoir, être</i></td></tr>\n          <tr><td>дієприкметник минулого часу</td><td>le participe passé</td><td><i>parlé, fini, pris</i></td></tr>\n          <tr><td>дієприкметник теперішнього часу</td><td>le participe présent</td><td><i>parlant</i></td></tr>\n          <tr><td>дієприслівник</td><td>le gérondif</td><td><i>en parlant</i></td></tr>\n          <tr><td>займенникове (зворотне) дієслово</td><td>le verbe pronominal</td><td><i>se lever, s'appeler</i></td></tr>\n          <tr><td>безособове дієслово</td><td>le verbe impersonnel</td><td><i>il faut, il pleut</i></td></tr>\n          <tr><td>час</td><td>le temps</td><td><i>présent, imparfait, futur…</i></td></tr>\n          <tr><td>спосіб</td><td>le mode</td><td><i>indicatif, subjonctif, conditionnel, impératif</i></td></tr>\n          <tr><td>узгодження</td><td>l'accord</td><td><i>elle est partie</i></td></tr>\n        </table></div>\n        <p>Часто трапляються скорочення: <b>qqn</b> = quelqu'un (хтось), <b>qqch</b> = quelque chose (щось), <b>PC</b> = passé composé, <b>PP</b> = participe passé. <b>Омофони</b> (les homophones) — слова, що звучать однаково, а пишуться по-різному: a / à.</p>\n      </div>\n    </div>\n  </details>\n\n  <details class=\"gloss\" id=\"plan\">\n    <summary><b>Мій план</b><span id=\"planSum\"></span></summary>\n    <div class=\"plan-body\">\n      <div class=\"plan-form\">\n        <label for=\"setHours\"><span>Годин на тиждень</span><input type=\"number\" id=\"setHours\" min=\"1\" max=\"40\" step=\"0.5\" inputmode=\"decimal\"></label>\n        <label for=\"setDaily\"><span>Ціль на день, хв</span><input type=\"number\" id=\"setDaily\" min=\"5\" max=\"480\" step=\"5\" inputmode=\"numeric\"></label>\n        <label for=\"setStart\"><span>Почати з етапу</span><select id=\"setStart\"></select></label>\n        <label for=\"setDeadline\"><span>Завершити до (необов'язково)</span><input type=\"date\" id=\"setDeadline\"></label>\n      </div>\n      <div class=\"plan-calc\" id=\"planCalc\"></div>\n      <div class=\"plan-data\">\n        <h3>Перенести прогрес на інший пристрій</h3>\n        <p>Прогрес, результати вправ, час і налаштування зберігаються в цьому браузері. Скопіюй їх тут і встав на іншому пристрої.</p>\n        <div class=\"fix-actions\">\n          <button type=\"button\" class=\"btn sm\" id=\"ioCopy\">Скопіювати прогрес</button>\n          <button type=\"button\" class=\"btn sm\" id=\"ioLoad\">Завантажити з поля</button>\n          <button type=\"button\" class=\"btn sm\" id=\"ioReset\">Скинути весь прогрес</button>\n          <span class=\"io-confirm\" id=\"ioConfirm\" hidden>Точно скинути все? <button type=\"button\" class=\"btn sm danger\" id=\"ioResetYes\">Так, скинути</button><button type=\"button\" class=\"btn sm\" id=\"ioResetNo\">Ні</button></span>\n        </div>\n        <textarea id=\"ioText\" rows=\"3\" spellcheck=\"false\" placeholder=\"Сюди вставляється скопійований прогрес\" aria-label=\"Дані прогресу\"></textarea>\n        <p class=\"io-msg\" id=\"ioMsg\" aria-live=\"polite\"></p>\n      </div>\n    </div>\n  </details>\n\n  <section class=\"now\" id=\"now\" aria-label=\"Що вчити зараз\"></section>\n\n  <div class=\"main\">\n    <div class=\"mapcard\">\n      <div class=\"maphead\">\n        <span class=\"label\">Карта · натисни станцію</span>\n        <div class=\"legend\">\n          <span><i class=\"lg-dot\"></i>тема</span>\n          <span><i class=\"lg-dot done\"></i>вивчено</span>\n          <span><i class=\"lg-dot ready\"></i>наступна за маршрутом</span><span><b style=\"font-family:var(--f-mono);font-size:11px\">1–30</b> порядок вивчення</span>\n          <span><i class=\"lg-dash\"></i>тема спирається на іншу тему</span>\n        </div>\n      </div>\n      <div class=\"mapscroll\"><svg id=\"map\" role=\"group\" aria-label=\"Карта граматичних тем\"></svg></div>\n      <div class=\"maphint\">Читай карту зверху вниз: рядок — це етап. Усередині рядка йди за номерами на станціях, вони стрибають між колонками. Колонку до кінця проходити не треба. Пунктир між станціями означає, що нижня тема використовує знання з верхньої: наприклад, Conditionnel бере закінчення з Imparfait. Натисни на станцію, щоб підсвітити її зв'язки й прочитати пояснення в панелі. Червона та бірюзова лінії (орфографія і речення) найважливіші для письма.</div>\n    </div>\n    <aside class=\"panel\" id=\"panel\" aria-live=\"polite\"></aside>\n  </div>\n\n  <section class=\"road\" id=\"road\">\n    <div class=\"road-intro\">\n      <div>\n        <h2>Маршрут</h2>\n        <p><span id=\"roadDur\"></span> Етапи йдуть по рядках карти: у кожному по одній темі з кожного розділу. Теми пронумеровані від 1 до 30: це рекомендований порядок, у якому кожна тема спирається на вже пройдені. Можна відхилятися, але тоді перевір у темі блок «Спирається на».</p>\n      </div>\n    </div>\n    <ol class=\"phases\" id=\"phases\"></ol>\n  </section>\n\n  <div class=\"extra\">\n    <div class=\"box\">\n      <h3>Як працювати з однією темою</h3>\n      <ol>\n        <li>Увімкни таймер, прочитай правило й приклади, пройди 5 тестів і 2 виправлення.</li>\n        <li>Напиши 8–10 власних речень на тему. Від руки краще.</li>\n        <li>Перевір їх за «типовою помилкою» і тестами заміни.</li>\n        <li>Через 2–3 дні — диктант або перепиши текст з пам'яті.</li>\n        <li>Познач тему як вивчену. Помилки, що повторюються, виписуй в окремий список.</li>\n      </ol>\n    </div>\n    <div class=\"box\">\n      <h3>Приклад тижня · близько 2 годин</h3>\n      <ul>\n        <li><b>2 × 30 хв</b> — нова тема з карти.</li>\n        <li><b>1 × 20 хв</b> — диктант (dictée) на рівні B1–B2.</li>\n        <li><b>1 × 45 хв</b> — письмове завдання етапу, потім самоперевірка.</li>\n        <li><b>щодня 5 хв</b> — повторення списку власних помилок.</li>\n      </ul>\n      <p>Темп і щоденну ціль можна змінити в блоці «Мій план» угорі сторінки.</p>\n    </div>\n    <div class=\"box\">\n      <h3>Час навчання · 7 днів</h3>\n      <div class=\"days\" id=\"days\"></div>\n      <p>Таймер рахує час на ту тему, яка відкрита. Якщо 30 хвилин не було жодної дії на сторінці, він ставить паузу й не зараховує цей проміжок.</p>\n    </div>\n    <div class=\"box\">\n      <h3>Джерела для практики</h3>\n      <ul>\n        <li><a href=\"https://apprendre.tv5monde.com/fr\" target=\"_blank\" rel=\"noopener\">TV5Monde Apprendre</a> — вправи та диктанти за рівнями</li>\n        <li><a href=\"https://www.projet-voltaire.fr/\" target=\"_blank\" rel=\"noopener\">Projet Voltaire</a> — тренажер орфографії</li>\n        <li><a href=\"https://bescherelle.com/\" target=\"_blank\" rel=\"noopener\">Bescherelle</a> — дієвідмінювання</li>\n        <li><a href=\"https://www.lepointdufle.net/\" target=\"_blank\" rel=\"noopener\">Le point du FLE</a> — вправи за темами</li>\n      </ul>\n    </div>\n  </div>\n</div>\n\n<div class=\"tmr\" id=\"tmr\" role=\"region\" aria-label=\"Таймер навчання\">\n  <div class=\"tmr-txt\">\n    <div class=\"tmr-time\"><i></i><span id=\"tmrTime\">0:00</span></div>\n    <div class=\"tmr-sub\" id=\"tmrSub\">Натисни, щоб почати</div>\n  </div>\n  <button type=\"button\" class=\"tmr-btn\" id=\"tmrBtn\" aria-label=\"Почати таймер\"></button>\n</div>\n";
+// Static page markup for a grammar map, built from the interface dictionary.
+// Dynamic parts (map SVG, panel, route, plan calculations, timer) are filled in by lib/grammar-app.js.
+
+import type { Dict } from "@/lib/i18n/ui";
+
+export function buildMarkup(m: Dict["map"], glossaryHtml: string): string {
+  return `<div class="wrap">
+  <header class="hero">
+    <div class="title">
+      <span class="badge"><i></i>${m.badge}</span>
+      <h1>${m.titleHtml}</h1>
+      <p>${m.lead}</p>
+    </div>
+    <div class="prog card">
+      <div class="prog-top"><span class="label">${m.progDone}</span><span class="prog-num" id="progNum">0 / 30</span><button class="btn primary" id="nextBtn" type="button">${m.nextBtn}</button></div>
+      <div class="strip" id="strip" aria-label="${m.stripAria}"></div>
+      <div class="stats"><span>${m.statToday} <b id="stToday">0</b> <span id="stGoal"></span></span><span>${m.statWeek} <b id="stWeek">0</b></span><span>${m.statTotal} <b id="stTotal">0</b></span></div>
+    </div>
+  </header>
+  <details class="gloss" id="gloss">
+    <summary><b>${m.glossTitle}</b><span>${m.glossSub}</span></summary>
+    ${glossaryHtml}
+  </details>
+
+  <details class="gloss" id="plan">
+    <summary><b>${m.planTitle}</b><span id="planSum"></span></summary>
+    <div class="plan-body">
+      <div class="plan-form">
+        <label for="setHours"><span>${m.planHours}</span><input type="number" id="setHours" min="1" max="40" step="0.5" inputmode="decimal"></label>
+        <label for="setDaily"><span>${m.planDaily}</span><input type="number" id="setDaily" min="5" max="480" step="5" inputmode="numeric"></label>
+        <label for="setStart"><span>${m.planStart}</span><select id="setStart"></select></label>
+        <label for="setDeadline"><span>${m.planDeadline}</span><input type="date" id="setDeadline"></label>
+      </div>
+      <div class="plan-calc" id="planCalc"></div>
+      <div class="plan-data">
+        <h3>${m.dataTitle}</h3>
+        <p>${m.dataText}</p>
+        <div class="fix-actions">
+          <button type="button" class="btn sm" id="ioCopy">${m.dataCopy}</button>
+          <button type="button" class="btn sm" id="ioLoad">${m.dataLoad}</button>
+          <button type="button" class="btn sm" id="ioReset">${m.dataReset}</button>
+          <span class="io-confirm" id="ioConfirm" hidden>${m.dataConfirm} <button type="button" class="btn sm danger" id="ioResetYes">${m.dataYes}</button><button type="button" class="btn sm" id="ioResetNo">${m.dataNo}</button></span>
+        </div>
+        <textarea id="ioText" rows="3" spellcheck="false" placeholder="${m.dataPlaceholder}" aria-label="${m.dataAria}"></textarea>
+        <p class="io-msg" id="ioMsg" aria-live="polite"></p>
+      </div>
+    </div>
+  </details>
+
+  <section class="now" id="now" aria-label="${m.nowAria}"></section>
+
+  <div class="sec-head" id="map-section">
+    <span class="eyebrow">${m.mapEyebrow}</span>
+    <h2>${m.mapTitleHtml}</h2>
+    <p>${m.mapLead}</p>
+  </div>
+
+  <div class="main">
+    <div class="mapcard">
+      <div class="maphead">
+        <span class="label">${m.mapLabel}</span>
+        <div class="legend">
+          <span><i class="lg-dot"></i>${m.legendTopic}</span>
+          <span><i class="lg-dot done"></i>${m.legendDone}</span>
+          <span><i class="lg-dot ready"></i>${m.legendNext}</span><span><b style="font-family:var(--f-mono);font-size:11px">1–30</b> ${m.legendOrder}</span>
+          <span><i class="lg-dash"></i>${m.legendDash}</span>
+        </div>
+      </div>
+      <div class="mapscroll"><svg id="map" role="group" aria-label="${m.mapAria}"></svg></div>
+      <div class="maphint">${m.mapHint}</div>
+    </div>
+    <aside class="panel" id="panel" aria-live="polite"></aside>
+  </div>
+
+  <section class="road" id="road">
+    <div class="road-intro">
+      <div>
+        <span class="eyebrow">${m.roadEyebrow}</span>
+        <h2>${m.roadTitleHtml}</h2>
+        <p><span id="roadDur"></span> ${m.roadLead}</p>
+      </div>
+    </div>
+    <ol class="phases" id="phases"></ol>
+  </section>
+
+  <div class="sec-head" id="practice">
+    <span class="eyebrow">${m.practiceEyebrow}</span>
+    <h2>${m.practiceTitleHtml}</h2>
+  </div>
+
+  <div class="extra">
+    <div class="box">
+      <h3>${m.howTitle}</h3>
+      <ol>
+        ${m.howSteps.map((s) => `<li>${s}</li>`).join("\n        ")}
+      </ol>
+    </div>
+    <div class="box">
+      <h3>${m.weekTitle}</h3>
+      <ul>
+        ${m.weekItemsHtml.map((s) => `<li>${s}</li>`).join("\n        ")}
+      </ul>
+      <p>${m.weekNote}</p>
+    </div>
+    <div class="box">
+      <h3>${m.timeTitle}</h3>
+      <div class="days" id="days"></div>
+      <p>${m.timeNote}</p>
+    </div>
+    <div class="box">
+      <h3>${m.sourcesTitle}</h3>
+      <ul>
+        <li><a href="https://apprendre.tv5monde.com/fr" target="_blank" rel="noopener">TV5Monde Apprendre</a> — ${m.sources.tv5}</li>
+        <li><a href="https://www.projet-voltaire.fr/" target="_blank" rel="noopener">Projet Voltaire</a> — ${m.sources.voltaire}</li>
+        <li><a href="https://bescherelle.com/" target="_blank" rel="noopener">Bescherelle</a> — ${m.sources.bescherelle}</li>
+        <li><a href="https://www.lepointdufle.net/" target="_blank" rel="noopener">Le point du FLE</a> — ${m.sources.fle}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="tmr" id="tmr" role="region" aria-label="${m.timerAria}">
+  <div class="tmr-txt">
+    <div class="tmr-time"><i></i><span id="tmrTime">0:00</span></div>
+    <div class="tmr-sub" id="tmrSub"></div>
+  </div>
+  <button type="button" class="tmr-btn" id="tmrBtn"></button>
+</div>
+`;
+}
