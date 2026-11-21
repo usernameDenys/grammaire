@@ -39,8 +39,6 @@ export const AUTONYM: Record<Lang, string> = { uk: "Українська", en: "
 
 export const CODE: Record<Lang, string> = { uk: "UK", en: "EN", fr: "FR" };
 
-/** BCP 47 locales for dates and numbers. */
-export const LOCALE: Record<Lang, string> = { uk: "uk-UA", en: "en-GB", fr: "fr-FR" };
 
 export const isLang = (v: unknown): v is Lang => typeof v === "string" && (LANGS as readonly string[]).includes(v);
 
