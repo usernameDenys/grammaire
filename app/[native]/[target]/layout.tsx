@@ -14,12 +14,13 @@ export default async function PairLayout({ children, params }: LayoutProps<"/[na
   const { native, target } = await params;
   if (!isLang(native) || !isLang(target)) notFound();
   const hasMap = pairHasMap(native, target);
+  // data-map gives every map its own ink colour (see app/globals.css).
   return (
-    <>
+    <div data-map={target}>
       <LangSync target={target} />
       <SiteHeader native={native} target={target} sections={hasMap} />
       <main id="main">{children}</main>
       <SiteFooter native={native} sections={hasMap} />
-    </>
+    </div>
   );
 }
