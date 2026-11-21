@@ -33,8 +33,11 @@ npm run build && npm start
 - `app/[native]/layout.tsx` — root layout per interface language (`<html lang>`), fonts, theme script
 - `app/[native]/[target]/layout.tsx` — site header, footer, language cookie sync
 - `app/[native]/[target]/page.tsx` — grammar map, or "coming soon" when the pair has no map yet
-- `app/globals.css` — all styles; design tokens follow denys-holenko.com (warm paper, sage accent,
-  Bricolage Grotesque / Hanken Grotesk / JetBrains Mono, Literata for French examples), light and dark theme
+- `app/globals.css` — all styles. Design language "Cahier & encre": a French school notebook (Seyès grid,
+  red margin line), ink blue as the main colour, the teacher's red pen for mistakes, green for correct.
+  Literata for headings and French examples, Golos Text for body text (both cover Cyrillic), JetBrains Mono
+  for numbers only. Every map has its own ink colour via `data-map` (fr blue, en plum, uk amber).
+  Light and dark ("ink at night") themes.
 - `lib/i18n/config.ts` — languages, available pairs, cookies, locales, system-language matching
 - `lib/i18n/ui.ts` — interface strings for every native language (UI only, no grammar content)
 - `components/SiteHeader.tsx` — sticky header: in-page navigation, study timer (shell only; driven by

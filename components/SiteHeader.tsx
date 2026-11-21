@@ -87,8 +87,12 @@ export default function SiteHeader({ native, target, sections }: Props) {
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
         >
+          <svg className="sh-logo" viewBox="0 0 30 30" aria-hidden="true">
+            <path className="ln" d="M5 24 L13 16 H25" />
+            <circle className="stn" cx="5" cy="24" r="3.6" />
+            <circle className="stn" cx="25" cy="16" r="3.6" />
+          </svg>
           {d.brand}
-          <span className="sh-dot">.</span>
         </a>
         {sections && (
           <nav className="sh-nav" aria-label={d.navAria}>
