@@ -24,5 +24,5 @@ export default async function Page({ params }: PageProps<"/[native]/[target]">) 
   const { native, target } = await params;
   if (!isLang(native) || !isLang(target)) notFound();
   if (!hasMap(native, target)) return <ComingSoon native={native} target={target} />;
-  return <GrammarMap native={native} />;
+  return <GrammarMap native={native} target={target} />;
 }

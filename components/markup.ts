@@ -1,5 +1,6 @@
 // Static page markup for a grammar map, built from the interface dictionary.
-// Dynamic parts (map SVG, panel, route, plan calculations, timer) are filled in by lib/grammar-app.js.
+// Dynamic parts (map SVG, panel, route, plan calculations) are filled in by lib/grammar-app.js.
+// The study timer lives in the site header (components/SiteHeader.tsx).
 
 import type { Dict } from "@/lib/i18n/ui";
 
@@ -32,18 +33,6 @@ export function buildMarkup(m: Dict["map"], glossaryHtml: string): string {
         <label for="setDeadline"><span>${m.planDeadline}</span><input type="date" id="setDeadline"></label>
       </div>
       <div class="plan-calc" id="planCalc"></div>
-      <div class="plan-data">
-        <h3>${m.dataTitle}</h3>
-        <p>${m.dataText}</p>
-        <div class="fix-actions">
-          <button type="button" class="btn sm" id="ioCopy">${m.dataCopy}</button>
-          <button type="button" class="btn sm" id="ioLoad">${m.dataLoad}</button>
-          <button type="button" class="btn sm" id="ioReset">${m.dataReset}</button>
-          <span class="io-confirm" id="ioConfirm" hidden>${m.dataConfirm} <button type="button" class="btn sm danger" id="ioResetYes">${m.dataYes}</button><button type="button" class="btn sm" id="ioResetNo">${m.dataNo}</button></span>
-        </div>
-        <textarea id="ioText" rows="3" spellcheck="false" placeholder="${m.dataPlaceholder}" aria-label="${m.dataAria}"></textarea>
-        <p class="io-msg" id="ioMsg" aria-live="polite"></p>
-      </div>
     </div>
   </details>
 
@@ -55,8 +44,7 @@ export function buildMarkup(m: Dict["map"], glossaryHtml: string): string {
     <p>${m.mapLead}</p>
   </div>
 
-  <div class="main">
-    <div class="mapcard">
+  <div class="mapcard">
       <div class="maphead">
         <span class="label">${m.mapLabel}</span>
         <div class="legend">
@@ -68,8 +56,6 @@ export function buildMarkup(m: Dict["map"], glossaryHtml: string): string {
       </div>
       <div class="mapscroll"><svg id="map" role="group" aria-label="${m.mapAria}"></svg></div>
       <div class="maphint">${m.mapHint}</div>
-    </div>
-    <aside class="panel" id="panel" aria-live="polite"></aside>
   </div>
 
   <section class="road" id="road">
@@ -119,12 +105,15 @@ export function buildMarkup(m: Dict["map"], glossaryHtml: string): string {
   </div>
 </div>
 
-<div class="tmr" id="tmr" role="region" aria-label="${m.timerAria}">
-  <div class="tmr-txt">
-    <div class="tmr-time"><i></i><span id="tmrTime">0:00</span></div>
-    <div class="tmr-sub" id="tmrSub"></div>
+<div class="drawer" id="drawer" hidden>
+  <div class="drawer-backdrop" data-close></div>
+  <div class="drawer-sheet" id="drawerSheet" role="dialog" aria-modal="true" aria-label="${m.topicAria}">
+    <div class="drawer-bar">
+      <span class="label">${m.topicLabel}</span>
+      <button type="button" class="drawer-close" data-close aria-label="${m.close}"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg></button>
+    </div>
+    <article class="panel" id="panel"></article>
   </div>
-  <button type="button" class="tmr-btn" id="tmrBtn"></button>
 </div>
 `;
 }
