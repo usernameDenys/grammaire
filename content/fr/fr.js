@@ -5,7 +5,10 @@
 // Explanations (LONG) use a tiny markup: "## heading", "| table |" (1st row = header),
 // "- list item", "! note", anything else = paragraph.
 
+import { SOURCES } from "./sources";
+
 export const content = {
+  SOURCES,
   DOM: {
     V: {
       fr: "Indicatif",

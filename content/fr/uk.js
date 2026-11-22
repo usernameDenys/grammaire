@@ -4,6 +4,8 @@
 // Explanations (LONG) use a tiny markup: "## heading", "| table |" (1st row = header),
 // "- list item", "! note", anything else = paragraph.
 
+import { SOURCES } from "./sources";
+
 const DOM = {
   V:{fr:"Indicatif",gloss:"теперішній і минулі",c:"--l-v"},
   M:{fr:"Futur & modes",gloss:"майбутнє і способи",c:"--l-m"},
@@ -953,4 +955,4 @@ const WHY = {
 "S5<N5":"обидві теми — інструменти письмового стилю, і вони працюють разом."
 };
 
-export const content = { DOM, PHASES, T, EX, LONG, WHY };
+export const content = { DOM, PHASES, T, EX, LONG, WHY, SOURCES };
