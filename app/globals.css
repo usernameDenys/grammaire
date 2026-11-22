@@ -256,6 +256,8 @@ html.drawer-lock{overflow:hidden}
 .rel-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;padding:10px 12px;border:1px solid var(--hair);border-radius:10px}
 .rel-row p{margin:0;flex-basis:100%;font-size:14.5px}
 .pn-actions{display:flex;flex-wrap:wrap;gap:8px;padding-top:16px;border-top:1px solid var(--hair)}
+.pn-report{margin:-10px 0 0;font-size:14px;color:var(--muted)}
+.pn-report a{color:var(--accent)}
 .btn.done-on{background:var(--ok-bg);border-color:var(--ok);color:var(--ok)}
 
 /* ---------- Route ---------- */

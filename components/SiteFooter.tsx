@@ -1,6 +1,7 @@
 import type { Lang } from "@/lib/i18n/config";
 import { getDict } from "@/lib/i18n/ui";
 import { syncEnabled } from "@/lib/sync";
+import { CONTACT_EMAIL, mailto } from "@/lib/contact";
 
 const SITE = "https://denys-holenko.com";
 
@@ -40,7 +41,8 @@ export default function SiteFooter({ native }: { native: Lang }) {
 
         <div className="sf-col">
           <h3>{f.contactHeading}</h3>
-          <a href="mailto:contact@denys-holenko.com">contact@denys-holenko.com</a>
+          <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+          <a href={mailto(f.feedbackSubject)}>{f.feedback}</a>
           <a href={SITE} target="_blank" rel="noopener">denys-holenko.com</a>
           <div className="sf-social">
             <a href="https://www.linkedin.com/in/denys-holenko/" target="_blank" rel="noopener" aria-label="LinkedIn">
