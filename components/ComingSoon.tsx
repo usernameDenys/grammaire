@@ -1,10 +1,10 @@
-import { type Lang, firstMapFor, pairPath } from "@/lib/i18n/config";
+import { type Lang, mapsFor, pairPath } from "@/lib/i18n/config";
 import { getDict } from "@/lib/i18n/ui";
 
 export default function ComingSoon({ native, target }: { native: Lang; target: Lang }) {
   const d = getDict(native);
-  // Offer a working map in the same interface language, if there is one.
-  const fallback = firstMapFor(native);
+  // Offer every working map in the same interface language.
+  const available = mapsFor(native);
   return (
     <div className="wrap">
       <section className="soon">
@@ -15,13 +15,17 @@ export default function ComingSoon({ native, target }: { native: Lang; target: L
         <h1 dangerouslySetInnerHTML={{ __html: d.soon.titleHtml(target) }} />
         <p>
           {d.soon.text}
-          {fallback && ` ${d.soon.textAlt}`}
+          {available.length > 0 && ` ${d.soon.textAlt}`}
         </p>
-        {fallback && (
-          // Plain <a>: switching maps reloads the page so the map script starts fresh.
-          <a className="btn primary" href={pairPath(native, fallback)}>
-            {d.soon.cta} →
-          </a>
+        {available.length > 0 && (
+          <div className="soon-maps">
+            {available.map((t, i) => (
+              // Plain <a>: switching maps reloads the page so the map script starts fresh.
+              <a key={t} className={`btn${i === 0 ? " primary" : ""}`} href={pairPath(native, t)}>
+                {d.soon.cta(t)} →
+              </a>
+            ))}
+          </div>
         )}
       </section>
     </div>

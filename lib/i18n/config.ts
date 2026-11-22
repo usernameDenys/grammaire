@@ -17,12 +17,14 @@ export const AVAILABLE_PAIRS: readonly (readonly [native: Lang, target: Lang])[]
   ["fr", "fr"],
   ["uk", "en"],
   ["fr", "en"],
+  ["en", "en"],
+  ["en", "fr"],
 ];
 
 export const hasMap = (native: Lang, target: Lang) => AVAILABLE_PAIRS.some(([n, t]) => n === native && t === target);
 
-/** First target with a working map for this native language, if any. */
-export const firstMapFor = (native: Lang): Lang | null => AVAILABLE_PAIRS.find(([n]) => n === native)?.[1] ?? null;
+/** Targets with a working map for this native language, in AVAILABLE_PAIRS order. */
+export const mapsFor = (native: Lang): Lang[] => AVAILABLE_PAIRS.filter(([n]) => n === native).map(([, t]) => t);
 
 /**
  * Native language follows the system (Accept-Language / navigator.languages) unless the user

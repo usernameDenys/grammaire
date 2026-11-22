@@ -11,7 +11,8 @@ export async function generateMetadata({ params }: PageProps<"/[native]/[target]
   const d = getDict(native);
   return {
     title: d.meta.title(target),
-    description: d.meta.description,
+    // A pair without a map gets the "coming soon" text rather than a map description.
+    description: hasMap(native, target) ? d.meta.description(target) : d.soon.text,
     applicationName: "Grammar Maps",
     alternates: {
       canonical: pairPath(native, target),

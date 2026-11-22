@@ -44,3 +44,24 @@ export const copyFr: MapCopy = {
     { name: "Le point du FLE", url: "https://www.lepointdufle.net/", desc: "exercices par thème" },
   ],
 };
+
+export const copyEn: MapCopy = {
+  badge: "French grammar · 30 topics · 5 stages",
+  titleHtml: "French grammar <em>map</em>.",
+  glossSub: "parts of speech, persons, sentence roles, verb terms · in English and French",
+  mapHint:
+    "Read the map top to bottom: a row is a stage. Within a row, follow the numbers on the stations — they jump between columns. You don't need to finish a column. A dashed line between stations means the lower topic uses knowledge from the upper one: for example, Conditionnel takes its endings from Imparfait. Tap a station to highlight its links and read the explanation in the panel. The red and teal lines (spelling and sentence) matter most for writing.",
+  weekItemsHtml: [
+    "<b>2 × 30 min</b> — a new topic from the map.",
+    "<b>1 × 20 min</b> — a dictation (dictée) at B1–B2 level.",
+    "<b>1 × 45 min</b> — the stage writing task, then self-check.",
+    "<b>5 min daily</b> — review your own list of mistakes.",
+  ],
+  practiceTitle: "Practice resources",
+  practice: [
+    { name: "TV5Monde Apprendre", url: "https://apprendre.tv5monde.com/", desc: "exercises and dictations by level" },
+    { name: "Projet Voltaire", url: "https://www.projet-voltaire.fr/", desc: "spelling trainer (in French)" },
+    { name: "Bescherelle", url: "https://bescherelle.com/", desc: "verb conjugation" },
+    { name: "Le point du FLE", url: "https://www.lepointdufle.net/", desc: "exercises by topic" },
+  ],
+};

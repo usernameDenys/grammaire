@@ -5,14 +5,18 @@
 import type { Lang } from "@/lib/i18n/config";
 import { content as frForUk } from "./fr/uk";
 import { content as frForFr } from "./fr/fr";
+import { content as frForEn } from "./fr/en";
 import { glossaryHtml as frGlossaryUk } from "./fr/glossary.uk";
 import { glossaryHtml as frGlossaryFr } from "./fr/glossary.fr";
-import { copyUk as frCopyUk, copyFr as frCopyFr } from "./fr/copy";
+import { glossaryHtml as frGlossaryEn } from "./fr/glossary.en";
+import { copyUk as frCopyUk, copyFr as frCopyFr, copyEn as frCopyEn } from "./fr/copy";
 import { content as enForUk } from "./en/uk";
 import { content as enForFr } from "./en/fr";
+import { content as enForEn } from "./en/en";
 import { glossaryHtml as enGlossaryUk } from "./en/glossary.uk";
 import { glossaryHtml as enGlossaryFr } from "./en/glossary.fr";
-import { copyUk as enCopyUk, copyFr as enCopyFr } from "./en/copy";
+import { glossaryHtml as enGlossaryEn } from "./en/glossary.en";
+import { copyUk as enCopyUk, copyFr as enCopyFr, copyEn as enCopyEn } from "./en/copy";
 
 /** A map column (grammar section). `fr` is its name in the target language (historical key). */
 type Section = { fr: string; gloss: string; c: string };
@@ -65,6 +69,8 @@ const MAPS: Partial<Record<`${Lang}-${Lang}`, MapBundle>> = {
   "fr-fr": { content: frForFr, glossaryHtml: frGlossaryFr, copy: frCopyFr },
   "uk-en": { content: enForUk, glossaryHtml: enGlossaryUk, copy: enCopyUk },
   "fr-en": { content: enForFr, glossaryHtml: enGlossaryFr, copy: enCopyFr },
+  "en-fr": { content: frForEn, glossaryHtml: frGlossaryEn, copy: frCopyEn },
+  "en-en": { content: enForEn, glossaryHtml: enGlossaryEn, copy: enCopyEn },
 };
 
 export const getMap = (native: Lang, target: Lang): MapBundle | null => MAPS[`${native}-${target}`] ?? null;
