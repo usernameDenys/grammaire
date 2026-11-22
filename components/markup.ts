@@ -13,6 +13,7 @@ export function buildMarkup(m: Dict["map"], c: MapCopy, glossaryHtml: string): s
       <span class="badge"><i></i>${c.badge}</span>
       <h1>${c.titleHtml}</h1>
       <p>${m.lead}</p>
+      <p class="audience">${c.audienceHtml}</p>
     </div>
     <div class="prog card">
       <div class="prog-top"><span class="label">${m.progDone}</span><span class="prog-num" id="progNum">0 / 30</span><button class="btn primary" id="nextBtn" type="button">${m.nextBtn}</button></div>

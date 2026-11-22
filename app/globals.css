@@ -106,6 +106,8 @@ button{font:inherit;color:inherit}
 .title{display:flex;flex-direction:column;gap:20px;min-width:0}
 .title h1{font-family:var(--f-display);font-weight:600;font-size:clamp(40px,6vw,76px);letter-spacing:-.02em;line-height:1.02}
 .title p{margin:0;color:var(--muted);max-width:56ch;font-size:18px;line-height:1.6}
+/* who the map is for: a quiet note under the hero text */
+.title .audience{font-size:15.5px;line-height:1.55;padding-left:14px;border-left:3px solid var(--hair-2)}
 .card{background:var(--card);border:1px solid var(--hair);border-radius:var(--radius);box-shadow:var(--shadow-sm)}
 /* progress: a big count and a strip of 30 boxes, one per topic */
 .prog{display:flex;flex-direction:column;gap:14px;min-width:0;padding:22px}

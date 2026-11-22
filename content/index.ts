@@ -59,6 +59,8 @@ export type MapContent = {
 
 export type MapCopy = {
   badge: string;
+  /** who the map is for and where to start from zero; shown under the hero text */
+  audienceHtml: string;
   titleHtml: string;
   glossSub: string;
   mapHint: string;

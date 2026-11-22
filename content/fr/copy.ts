@@ -4,7 +4,9 @@
 import type { MapCopy } from "@/content";
 
 export const copyUk: MapCopy = {
-  badge: "Французька граматика · 30 тем · 5 етапів",
+  badge: "Французька граматика · 30 тем · 5 етапів · A2 → B2",
+  audienceHtml:
+    'Для кого: ти вже читаєш французькою й знаєш базові слова (приблизно A2). Абетки, вимови й правил читання тут немає. Якщо починаєш з нуля, почни з <a href="https://apprendre.tv5monde.com/" target="_blank" rel="noopener">TV5Monde Apprendre</a>.',
   titleHtml: "Карта французької <em>граматики</em>.",
   glossSub: "частини мови, особи, ролі в реченні, дієслівні терміни · українською та французькою",
   mapHint:
@@ -26,6 +28,8 @@ export const copyUk: MapCopy = {
 
 export const copyFr: MapCopy = {
   badge: "Grammaire française · 30 thèmes · 5 étapes",
+  audienceHtml:
+    "Pour qui : tu parles déjà français et tu veux écrire sans fautes. Ce n'est ni un cours de lecture ni un cours de prononciation.",
   titleHtml: "Carte de la <em>grammaire</em> française.",
   glossSub: "parties du discours, personnes, fonctions dans la phrase, termes verbaux",
   mapHint:
@@ -46,7 +50,9 @@ export const copyFr: MapCopy = {
 };
 
 export const copyEn: MapCopy = {
-  badge: "French grammar · 30 topics · 5 stages",
+  badge: "French grammar · 30 topics · 5 stages · A2 → B2",
+  audienceHtml:
+    'Who it\'s for: you can already read French and know basic words (about A2). There\'s no alphabet, pronunciation or reading course here. If you\'re starting from zero, begin with <a href="https://apprendre.tv5monde.com/" target="_blank" rel="noopener">TV5Monde Apprendre</a>.',
   titleHtml: "French grammar <em>map</em>.",
   glossSub: "parts of speech, persons, sentence roles, verb terms · in English and French",
   mapHint:

@@ -4,7 +4,9 @@
 import type { MapCopy } from "@/content";
 
 export const copyEn: MapCopy = {
-  badge: "Ukrainian grammar · 30 topics · 5 stages",
+  badge: "Ukrainian grammar · 30 topics · 5 stages · A1 → B1",
+  audienceHtml:
+    'Who it\'s for: you need to read Cyrillic and know a few basic words. If you can\'t read it yet, start with the <a href="https://www.ukrainianlessons.com/ukrainian-alphabet/" target="_blank" rel="noopener">Ukrainian alphabet guide</a> from Ukrainian Lessons.',
   titleHtml: "Ukrainian grammar <em>map</em>.",
   glossSub: "cases, aspect, parts of speech, verb terms · in English and Ukrainian",
   mapHint:
@@ -25,7 +27,9 @@ export const copyEn: MapCopy = {
 };
 
 export const copyFr: MapCopy = {
-  badge: "Grammaire ukrainienne · 30 thèmes · 5 étapes",
+  badge: "Grammaire ukrainienne · 30 thèmes · 5 étapes · A1 → B1",
+  audienceHtml:
+    'Pour qui : il faut savoir lire le cyrillique et connaître quelques mots de base. Sinon, commence par le <a href="https://www.ukrainianlessons.com/ukrainian-alphabet/" target="_blank" rel="noopener">guide de l\'alphabet ukrainien</a> d\'Ukrainian Lessons (en anglais).',
   titleHtml: "Carte de la <em>grammaire</em> ukrainienne.",
   glossSub: "cas, aspect, parties du discours, termes verbaux · en français et en ukrainien",
   mapHint:
