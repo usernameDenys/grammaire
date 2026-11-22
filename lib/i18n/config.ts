@@ -19,6 +19,8 @@ export const AVAILABLE_PAIRS: readonly (readonly [native: Lang, target: Lang])[]
   ["fr", "en"],
   ["en", "en"],
   ["en", "fr"],
+  ["en", "uk"],
+  ["fr", "uk"],
 ];
 
 export const hasMap = (native: Lang, target: Lang) => AVAILABLE_PAIRS.some(([n, t]) => n === native && t === target);
