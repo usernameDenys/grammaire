@@ -17,6 +17,11 @@ import { glossaryHtml as enGlossaryUk } from "./en/glossary.uk";
 import { glossaryHtml as enGlossaryFr } from "./en/glossary.fr";
 import { glossaryHtml as enGlossaryEn } from "./en/glossary.en";
 import { copyUk as enCopyUk, copyFr as enCopyFr, copyEn as enCopyEn } from "./en/copy";
+import { content as ukForEn } from "./uk/en";
+import { content as ukForFr } from "./uk/fr";
+import { glossaryHtml as ukGlossaryEn } from "./uk/glossary.en";
+import { glossaryHtml as ukGlossaryFr } from "./uk/glossary.fr";
+import { copyEn as ukCopyEn, copyFr as ukCopyFr } from "./uk/copy";
 
 /** A map column (grammar section). `fr` is its name in the target language (historical key). */
 type Section = { fr: string; gloss: string; c: string };
@@ -71,6 +76,8 @@ const MAPS: Partial<Record<`${Lang}-${Lang}`, MapBundle>> = {
   "fr-en": { content: enForFr, glossaryHtml: enGlossaryFr, copy: enCopyFr },
   "en-fr": { content: frForEn, glossaryHtml: frGlossaryEn, copy: frCopyEn },
   "en-en": { content: enForEn, glossaryHtml: enGlossaryEn, copy: enCopyEn },
+  "en-uk": { content: ukForEn, glossaryHtml: ukGlossaryEn, copy: ukCopyEn },
+  "fr-uk": { content: ukForFr, glossaryHtml: ukGlossaryFr, copy: ukCopyFr },
 };
 
 export const getMap = (native: Lang, target: Lang): MapBundle | null => MAPS[`${native}-${target}`] ?? null;
