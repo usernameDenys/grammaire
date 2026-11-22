@@ -39,6 +39,8 @@ const uk = {
     contactHeading: "Контакт",
     stored: "Прогрес зберігається у твоєму браузері",
     storedSync: "Прогрес зберігається в браузері, а після входу — в акаунті",
+    feedback: "Зауваження й ідеї",
+    feedbackSubject: "Grammar Maps: відгук",
   },
   meta: {
     title: (target: Lang) => `Карта ${{ uk: "української", en: "англійської", fr: "французької" }[target]} граматики · Grammar Maps`,
@@ -122,6 +124,9 @@ const uk = {
     fixHint: "Відредагуй речення в полі й натисни «Перевірити» або Enter.",
     fixHintSpaces: " Тут пробіли теж перевіряються.",
     redo: "Пройти вправи заново",
+    reportText: "Є помилка в правилі чи вправі?",
+    reportLink: "Напиши мені",
+    reportBody: (url: string) => `Тема: ${url}\n\nЩо не так:\n`,
     mistakesCount: (n: number) => {
       const m10 = n % 10, m100 = n % 100;
       const w = m10 === 1 && m100 !== 11 ? "вправа" : m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14) ? "вправи" : "вправ";
@@ -238,6 +243,8 @@ const en: Dict = {
     contactHeading: "Contact",
     stored: "Progress is stored in your browser",
     storedSync: "Progress is stored in your browser, and in your account once you sign in",
+    feedback: "Feedback and ideas",
+    feedbackSubject: "Grammar Maps: feedback",
   },
   meta: {
     title: (target) => `${{ uk: "Ukrainian", en: "English", fr: "French" }[target]} grammar map · Grammar Maps`,
@@ -321,6 +328,9 @@ const en: Dict = {
     fixHint: "Edit the sentence in the field and press “Check” or Enter.",
     fixHintSpaces: " Spaces are checked here too.",
     redo: "Redo the exercises",
+    reportText: "Spotted a mistake in a rule or an exercise?",
+    reportLink: "Let me know",
+    reportBody: (url) => `Topic: ${url}\n\nWhat's wrong:\n`,
     mistakesCount: (n) =>
       `${n} ${n === 1 ? "exercise" : "exercises"} on your list. A correct answer removes an exercise from the list.`,
     mistakesNone: "No mistakes yet. Exercises you get wrong will appear here so you can review them.",
@@ -427,6 +437,8 @@ const fr: Dict = {
     contactHeading: "Contact",
     stored: "La progression est enregistrée dans ton navigateur",
     storedSync: "La progression est enregistrée dans ton navigateur, et dans ton compte après la connexion",
+    feedback: "Remarques et idées",
+    feedbackSubject: "Grammar Maps : remarques",
   },
   meta: {
     title: (target) => `Carte de la grammaire ${{ uk: "ukrainienne", en: "anglaise", fr: "française" }[target]} · Grammar Maps`,
@@ -510,6 +522,9 @@ const fr: Dict = {
     fixHint: "Modifie la phrase dans le champ et appuie sur « Vérifier » ou Entrée.",
     fixHintSpaces: " Les espaces sont aussi vérifiées ici.",
     redo: "Refaire les exercices",
+    reportText: "Une erreur dans une règle ou un exercice ?",
+    reportLink: "Écris-moi",
+    reportBody: (url) => `Sujet : ${url}\n\nCe qui ne va pas :\n`,
     mistakesCount: (n) =>
       `${n} ${n === 1 ? "exercice" : "exercices"} dans ta liste. Une bonne réponse retire l'exercice de la liste.`,
     mistakesNone: "Pas encore d'erreurs. Les exercices où tu fais une erreur apparaîtront ici pour que tu puisses les revoir.",

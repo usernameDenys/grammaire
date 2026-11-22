@@ -4,6 +4,7 @@ import { useEffect, useMemo } from "react";
 import { buildMarkup } from "./markup";
 import { initApp } from "@/lib/grammar-app";
 import { onSave, prepare } from "@/lib/sync";
+import { mailto } from "@/lib/contact";
 import { getDict } from "@/lib/i18n/ui";
 import type { Lang } from "@/lib/i18n/config";
 import { getMap } from "@/content";
@@ -20,7 +21,7 @@ export default function GrammarMap({ native, target }: { native: Lang; target: L
     let live = true;
     const wait = new Promise<void>((resolve) => setTimeout(resolve, 4000));
     Promise.race([prepare().catch(() => {}), wait]).then(() => {
-      if (live) initApp(d.app, map.content, { onSave });
+      if (live) initApp(d.app, map.content, { onSave, mailto });
     });
     return () => {
       live = false;
