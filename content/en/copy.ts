@@ -4,7 +4,9 @@
 import type { MapCopy } from "@/content";
 
 export const copyUk: MapCopy = {
-  badge: "Англійська граматика · 30 тем · 5 етапів · до B2",
+  badge: "Англійська граматика · 30 тем · 5 етапів · A2 → B2",
+  audienceHtml:
+    'Для кого: ти вже читаєш англійською й знаєш базові слова (приблизно A2). Вимови й правил читання тут немає. Якщо починаєш з нуля, почни з <a href="https://www.bbc.co.uk/learningenglish/" target="_blank" rel="noopener">BBC Learning English</a>.',
   titleHtml: "Карта англійської <em>граматики</em>.",
   glossSub: "частини мови, ролі в реченні, дієслівні терміни, скорочення · українською та англійською",
   mapHint:
@@ -25,7 +27,9 @@ export const copyUk: MapCopy = {
 };
 
 export const copyFr: MapCopy = {
-  badge: "Grammaire anglaise · 30 thèmes · 5 étapes · jusqu'au B2",
+  badge: "Grammaire anglaise · 30 thèmes · 5 étapes · A2 → B2",
+  audienceHtml:
+    'Pour qui : tu lis déjà l\'anglais et tu connais les mots de base (environ A2). Il n\'y a ici ni cours de prononciation ni règles de lecture. Si tu pars de zéro, commence par <a href="https://www.bbc.co.uk/learningenglish/" target="_blank" rel="noopener">BBC Learning English</a>.',
   titleHtml: "Carte de la <em>grammaire</em> anglaise.",
   glossSub: "parties du discours, fonctions dans la phrase, termes verbaux, abréviations · en français et en anglais",
   mapHint:
@@ -46,7 +50,9 @@ export const copyFr: MapCopy = {
 };
 
 export const copyEn: MapCopy = {
-  badge: "English grammar · 30 topics · 5 stages · up to B2",
+  badge: "English grammar · 30 topics · 5 stages · A2 → B2",
+  audienceHtml:
+    "Who it's for: learners who already read English and know basic words (about A2). It isn't a pronunciation or reading course.",
   titleHtml: "English grammar <em>map</em>.",
   glossSub: "parts of speech, sentence roles, verb terms, abbreviations",
   mapHint:
