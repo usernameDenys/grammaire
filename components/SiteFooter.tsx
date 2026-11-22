@@ -3,7 +3,7 @@ import { getDict } from "@/lib/i18n/ui";
 
 const SITE = "https://denys-holenko.com";
 
-export default function SiteFooter({ native, sections }: { native: Lang; sections: boolean }) {
+export default function SiteFooter({ native }: { native: Lang }) {
   const { footer: f, site } = getDict(native);
   const year = new Date().getFullYear();
   const links = [
@@ -17,7 +17,7 @@ export default function SiteFooter({ native, sections }: { native: Lang; section
 
   return (
     <footer className="site-footer">
-      <div className={`sf-inner${sections ? "" : " no-nav"}`}>
+      <div className="sf-inner">
         <div className="sf-brand">
           <a className="sf-name" href={SITE} target="_blank" rel="noopener">
             Denys Holenko<span className="sh-dot">.</span>
@@ -28,16 +28,14 @@ export default function SiteFooter({ native, sections }: { native: Lang; section
           </a>
         </div>
 
-        {sections && (
-          <div className="sf-col">
-            <h3>{f.navHeading}</h3>
-            {links.map((l) => (
-              <a key={l.href} href={l.href}>
-                {l.label}
-              </a>
-            ))}
-          </div>
-        )}
+        <div className="sf-col">
+          <h3>{f.navHeading}</h3>
+          {links.map((l) => (
+            <a key={l.href} href={l.href}>
+              {l.label}
+            </a>
+          ))}
+        </div>
 
         <div className="sf-col">
           <h3>{f.contactHeading}</h3>

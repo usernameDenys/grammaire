@@ -5,8 +5,8 @@ import {
   NATIVE_COOKIE,
   TARGET_COOKIE,
   isLang,
+  mapPath,
   matchLang,
-  pairPath,
   parseAcceptLanguage,
 } from "@/lib/i18n/config";
 
@@ -21,7 +21,7 @@ export function proxy(request: NextRequest) {
   const last = request.cookies.get(TARGET_COOKIE)?.value;
   const target = isLang(last) ? last : DEFAULT_TARGET;
 
-  return NextResponse.redirect(new URL(pairPath(native, target), request.url));
+  return NextResponse.redirect(new URL(mapPath(native, target), request.url));
 }
 
 export const config = { matcher: "/" };

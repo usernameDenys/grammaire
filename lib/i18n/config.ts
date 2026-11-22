@@ -10,23 +10,30 @@ export const DEFAULT_TARGET: Lang = "fr";
 
 /**
  * Language pairs (native → target) that have a working map. Content is written for a specific
- * native language, so a map exists per pair, not per target. Other pairs show a "coming soon" page.
+ * native language, so a map exists per pair, not per target. Other pairs redirect to a map (next.config.ts).
  */
+// Maps of a language explained in that same language (fr → fr, en → en) are not published:
+// their content stays in content/ (see MAPS) and can be re-enabled by adding the pair here.
 export const AVAILABLE_PAIRS: readonly (readonly [native: Lang, target: Lang])[] = [
   ["uk", "fr"],
-  ["fr", "fr"],
   ["uk", "en"],
   ["fr", "en"],
-  ["en", "en"],
+  ["fr", "uk"],
   ["en", "fr"],
   ["en", "uk"],
-  ["fr", "uk"],
 ];
 
 export const hasMap = (native: Lang, target: Lang) => AVAILABLE_PAIRS.some(([n, t]) => n === native && t === target);
 
 /** Targets with a working map for this native language, in AVAILABLE_PAIRS order. */
 export const mapsFor = (native: Lang): Lang[] => AVAILABLE_PAIRS.filter(([n]) => n === native).map(([, t]) => t);
+
+/**
+ * Path to a map that exists: the requested pair if it has one, otherwise the first map
+ * for this native language. Pairs without a map are not published (see next.config.ts).
+ */
+export const mapPath = (native: Lang, target: Lang) =>
+  pairPath(native, hasMap(native, target) ? target : (mapsFor(native)[0] ?? target));
 
 /**
  * Native language follows the system (Accept-Language / navigator.languages) unless the user
