@@ -16,6 +16,7 @@ import {
   pairPath,
 } from "@/lib/i18n/config";
 import { getDict } from "@/lib/i18n/ui";
+import AccountMenu from "./AccountMenu";
 
 const SECTION_IDS = ["now", "map-section", "road", "practice", "plan", "gloss"] as const;
 const THEME_KEY = "frmap-theme";
@@ -82,6 +83,7 @@ export default function SiteHeader({ native, target }: Props) {
         <a
           className="sh-brand"
           href={pairPath(native, target)}
+          aria-label={d.brand}
           onClick={(e) => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: "smooth" });
@@ -92,7 +94,7 @@ export default function SiteHeader({ native, target }: Props) {
             <circle className="stn" cx="5" cy="24" r="3.6" />
             <circle className="stn" cx="25" cy="16" r="3.6" />
           </svg>
-          {d.brand}
+          <span className="sh-brand-text">{d.brand}</span>
         </a>
         <nav className="sh-nav" aria-label={d.navAria}>
           {SECTION_IDS.map((id) => (
@@ -103,6 +105,7 @@ export default function SiteHeader({ native, target }: Props) {
         </nav>
         <StudyTimer label={dict.map.timerAria} />
         <div className="sh-tools">
+          <AccountMenu native={native} />
           <LangSwitch native={native} target={target} />
           <button
             type="button"

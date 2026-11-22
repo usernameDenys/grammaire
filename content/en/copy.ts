@@ -49,25 +49,3 @@ export const copyFr: MapCopy = {
   ],
 };
 
-export const copyEn: MapCopy = {
-  badge: "English grammar · 30 topics · 5 stages · A2 → B2",
-  audienceHtml:
-    "Who it's for: learners who already read English and know basic words (about A2). It isn't a pronunciation or reading course.",
-  titleHtml: "English grammar <em>map</em>.",
-  glossSub: "parts of speech, sentence roles, verb terms, abbreviations",
-  mapHint:
-    "Read the map top to bottom: a row is a stage. Within a row, follow the numbers on the stations — they jump between columns. You don't need to finish a column. A dashed line between stations means the lower topic uses knowledge from the upper one: for example, the third conditional builds on the past perfect. Tap a station to highlight its links and read the explanation in the panel. The red line (questions and reported speech) matters most for speaking, the teal one (sentence and text) for writing.",
-  weekItemsHtml: [
-    "<b>2 × 30 min</b> — a new topic from the map.",
-    "<b>1 × 20 min</b> — a conversation or a monologue: record yourself for 2–3 minutes and listen back.",
-    "<b>1 × 45 min</b> — the stage writing task, then self-check.",
-    "<b>5 min daily</b> — review your own list of mistakes.",
-  ],
-  practiceTitle: "Practice resources",
-  practice: [
-    { name: "BBC Learning English", url: "https://www.bbc.co.uk/learningenglish/", desc: "audio, video and lessons by level" },
-    { name: "Write & Improve", url: "https://writeandimprove.com/", desc: "free feedback on your writing from Cambridge" },
-    { name: "Cambridge Dictionary", url: "https://dictionary.cambridge.org/grammar/british-grammar/", desc: "grammar reference with examples" },
-    { name: "YouGlish", url: "https://youglish.com/", desc: "hear a word or phrase in real videos" },
-  ],
-};

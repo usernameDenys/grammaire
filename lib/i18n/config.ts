@@ -12,8 +12,7 @@ export const DEFAULT_TARGET: Lang = "fr";
  * Language pairs (native → target) that have a working map. Content is written for a specific
  * native language, so a map exists per pair, not per target. Other pairs redirect to a map (next.config.ts).
  */
-// Maps of a language explained in that same language (fr → fr, en → en) are not published:
-// their content stays in content/ (see MAPS) and can be re-enabled by adding the pair here.
+// Only maps of another language are published: a pair like fr → fr has no map and redirects.
 export const AVAILABLE_PAIRS: readonly (readonly [native: Lang, target: Lang])[] = [
   ["uk", "fr"],
   ["uk", "en"],
