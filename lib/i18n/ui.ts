@@ -28,14 +28,15 @@ const uk = {
   },
   meta: {
     title: (target: Lang) => `Карта ${{ uk: "української", en: "англійської", fr: "французької" }[target]} граматики · Grammar Maps`,
-    description: "Інтерактивні карти граматики: теми, етапи й маршрут вивчення.",
+    description: (target: Lang) =>
+      `Інтерактивна карта ${{ uk: "української", en: "англійської", fr: "французької" }[target]} граматики: 30 тем, 5 етапів, пояснення, вправи й маршрут вивчення.`,
   },
   soon: {
     eyebrow: "Скоро",
     titleHtml: (target: Lang) => `Карта ${{ uk: "української", en: "англійської", fr: "французької" }[target]} граматики — <em>скоро</em>.`,
     text: "Ця карта ще в роботі.",
-    textAlt: "Поки що можна вивчати французьку граматику.",
-    cta: "Відкрити карту французької",
+    textAlt: "Поки що можна вивчати:",
+    cta: (target: Lang) => `Карта ${{ uk: "української", en: "англійської", fr: "французької" }[target]}`,
   },
   map: {
     lead: "30 тем у 6 розділах, розкладених на 5 етапів. Рядок карти — етап маршруту, кольорова лінія — розділ, пунктир — що варто знати перед темою.",
@@ -207,14 +208,15 @@ const en: Dict = {
   },
   meta: {
     title: (target) => `${{ uk: "Ukrainian", en: "English", fr: "French" }[target]} grammar map · Grammar Maps`,
-    description: "Interactive grammar maps: topics, stages and a learning route.",
+    description: (target) =>
+      `Interactive ${{ uk: "Ukrainian", en: "English", fr: "French" }[target]} grammar map: 30 topics, 5 stages, explanations, exercises and a learning route.`,
   },
   soon: {
     eyebrow: "Coming soon",
     titleHtml: (target) => `${{ uk: "Ukrainian", en: "English", fr: "French" }[target]} grammar map — <em>coming soon</em>.`,
     text: "This map is still in the works.",
-    textAlt: "For now you can learn French grammar.",
-    cta: "Open the French map",
+    textAlt: "For now you can learn:",
+    cta: (target) => `${{ uk: "Ukrainian", en: "English", fr: "French" }[target]} grammar map`,
   },
   map: {
     lead: "30 topics in 6 sections, laid out in 5 stages. A map row is a stage of the route, a coloured line is a section, a dashed line shows what to know before a topic.",
@@ -379,14 +381,15 @@ const fr: Dict = {
   },
   meta: {
     title: (target) => `Carte de la grammaire ${{ uk: "ukrainienne", en: "anglaise", fr: "française" }[target]} · Grammar Maps`,
-    description: "Des cartes de grammaire interactives : thèmes, étapes et parcours d'apprentissage.",
+    description: (target) =>
+      `Carte interactive de la grammaire ${{ uk: "ukrainienne", en: "anglaise", fr: "française" }[target]} : 30 thèmes, 5 étapes, explications, exercices et parcours d'apprentissage.`,
   },
   soon: {
     eyebrow: "Bientôt",
     titleHtml: (target) => `Carte de la grammaire ${{ uk: "ukrainienne", en: "anglaise", fr: "française" }[target]} — <em>bientôt</em>.`,
     text: "Cette carte est en préparation.",
-    textAlt: "En attendant, tu peux apprendre la grammaire française.",
-    cta: "Ouvrir la carte du français",
+    textAlt: "En attendant, tu peux apprendre :",
+    cta: (target) => `Grammaire ${{ uk: "ukrainienne", en: "anglaise", fr: "française" }[target]}`,
   },
   map: {
     lead: "30 thèmes en 6 sections, répartis en 5 étapes. Une ligne de la carte est une étape du parcours, une ligne de couleur une section, les pointillés indiquent ce qu'il faut savoir avant un thème.",
