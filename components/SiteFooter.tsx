@@ -1,5 +1,6 @@
 import type { Lang } from "@/lib/i18n/config";
 import { getDict } from "@/lib/i18n/ui";
+import { syncEnabled } from "@/lib/sync";
 
 const SITE = "https://denys-holenko.com";
 
@@ -52,7 +53,7 @@ export default function SiteFooter({ native }: { native: Lang }) {
       </div>
       <div className="sf-bottom">
         <span>© {year} Grammar Maps · Denys Holenko</span>
-        <span>{f.stored}</span>
+        <span>{syncEnabled ? f.storedSync : f.stored}</span>
       </div>
     </footer>
   );

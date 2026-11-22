@@ -3,6 +3,7 @@
 import { useEffect, useMemo } from "react";
 import { buildMarkup } from "./markup";
 import { initApp } from "@/lib/grammar-app";
+import { onSave, prepare } from "@/lib/sync";
 import { getDict } from "@/lib/i18n/ui";
 import type { Lang } from "@/lib/i18n/config";
 import { getMap } from "@/content";
@@ -14,7 +15,16 @@ export default function GrammarMap({ native, target }: { native: Lang; target: L
   const html = useMemo(() => buildMarkup(d.map, map.copy, map.glossaryHtml), [d, map]);
 
   useEffect(() => {
-    initApp(d.app, map.content);
+    // For a signed-in user, bring the saved progress in line with the account first,
+    // but never hold the map back for more than a few seconds.
+    let live = true;
+    const wait = new Promise<void>((resolve) => setTimeout(resolve, 4000));
+    Promise.race([prepare().catch(() => {}), wait]).then(() => {
+      if (live) initApp(d.app, map.content, { onSave });
+    });
+    return () => {
+      live = false;
+    };
   }, [d, map]);
 
   // The markup is static; all interactivity (SVG map, topic drawer, plan, timer)

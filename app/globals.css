@@ -287,6 +287,11 @@ html.drawer-lock{overflow:hidden}
 .box ol,.box ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:7px;font-size:15.5px}
 .box li::marker{color:var(--accent)}
 .box p{margin:0;color:var(--muted);font-size:14.5px}
+/* "my mistakes" box and the review drawer */
+.box.mistakes .btn{align-self:flex-start}
+.box.mistakes .btn:disabled{opacity:.45;cursor:default}
+.review-item{align-items:flex-start;padding-top:14px;border-top:1px solid var(--hair)}
+.review-item .q,.review-item .fix{align-self:stretch}
 @media (max-width:560px){
   .phase{grid-template-columns:44px minmax(0,1fr);gap:14px}
   .ph-badge{width:40px;height:40px;font-size:18px}
@@ -423,6 +428,8 @@ html.drawer-lock{overflow:hidden}
   .sh-inner{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"brand tools" "nav timer"}
   .site-header .tmr{justify-self:end}
 }
+/* narrow phones: the account button needs the room, so only the logo stays */
+@media (max-width:430px){ .sh-brand-text{display:none} }
 
 /* ---------- Site footer ---------- */
 .site-footer{margin:112px auto 0;max-width:1280px;padding:48px 0 calc(48px + env(safe-area-inset-bottom,0px));border-top:2px solid var(--ink);color:var(--muted);font-size:15.5px}
@@ -457,6 +464,25 @@ html.drawer-lock{overflow:hidden}
 .lang-menu{position:absolute;right:0;top:calc(100% + 8px);z-index:60;width:min(500px,calc(100vw - 40px));display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;
   padding:14px;background:var(--card);border:1px solid var(--hair);border-radius:var(--radius);box-shadow:var(--shadow-lg)}
 @media (max-width:420px){.lang-menu{grid-template-columns:1fr;right:-62px}}
+/* account (optional sign-in by email link, lib/sync.ts) */
+.acct{position:relative}
+.acct-btn{display:inline-grid;place-items:center;width:32px;height:32px;border:1px solid var(--hair-2);border-radius:999px;background:var(--card);color:var(--muted);cursor:pointer;transition:border-color .15s,color .15s}
+.acct-btn:hover,.acct-btn[aria-expanded="true"]{border-color:var(--ink);color:var(--ink)}
+.acct-btn svg{width:17px;height:17px}
+.acct-btn.on{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.acct-initial{font-size:13px;font-weight:700;line-height:1}
+.acct-menu{position:absolute;right:0;top:calc(100% + 8px);z-index:60;width:min(340px,calc(100vw - 32px));display:flex;flex-direction:column;gap:10px;
+  padding:16px;background:var(--card);border:1px solid var(--hair);border-radius:var(--radius);box-shadow:var(--shadow-lg)}
+.acct-menu form{display:flex;flex-direction:column;gap:10px}
+.acct-menu .btn{align-self:flex-start}
+.acct-title{margin:0;font-weight:700;font-size:15px;color:var(--ink)}
+.acct-note,.acct-email{margin:0;font-size:14px;line-height:1.5;color:var(--muted)}
+.acct-email{color:var(--ink);word-break:break-all}
+.acct-field{display:flex;flex-direction:column;gap:5px;font-size:13px;font-weight:600;color:var(--muted)}
+.acct-field input{font:inherit;font-weight:400;font-size:15px;color:var(--ink);background:var(--paper);border:1px solid var(--hair-2);border-radius:8px;padding:9px 11px}
+.acct-field input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+.acct-error{margin:0;font-size:13.5px;color:var(--pen)}
+@media (max-width:520px){.acct-menu{position:fixed;left:16px;right:16px;top:64px;width:auto}}
 .lang-group{display:flex;flex-direction:column;gap:2px;min-width:0}
 .lang-head{font-size:13px;font-weight:700;color:var(--muted);padding:4px 10px 8px}
 .lang-group a{display:flex;align-items:center;gap:10px;white-space:nowrap;padding:8px 10px;border-radius:8px;color:var(--ink);text-decoration:none;font-size:15px;transition:background .15s}

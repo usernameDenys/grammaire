@@ -84,6 +84,11 @@ export function buildMarkup(m: Dict["map"], c: MapCopy, glossaryHtml: string): s
         ${m.howSteps.map((s) => `<li>${s}</li>`).join("\n        ")}
       </ol>
     </div>
+    <div class="box mistakes">
+      <h3>${m.mistakesTitle}</h3>
+      <p id="mistakesText"></p>
+      <button type="button" class="btn primary sm" id="reviewBtn">${m.reviewBtn}</button>
+    </div>
     <div class="box">
       <h3>${m.weekTitle}</h3>
       <ul>

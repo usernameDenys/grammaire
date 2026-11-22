@@ -4,19 +4,15 @@
 
 import type { Lang } from "@/lib/i18n/config";
 import { content as frForUk } from "./fr/uk";
-import { content as frForFr } from "./fr/fr";
 import { content as frForEn } from "./fr/en";
 import { glossaryHtml as frGlossaryUk } from "./fr/glossary.uk";
-import { glossaryHtml as frGlossaryFr } from "./fr/glossary.fr";
 import { glossaryHtml as frGlossaryEn } from "./fr/glossary.en";
-import { copyUk as frCopyUk, copyFr as frCopyFr, copyEn as frCopyEn } from "./fr/copy";
+import { copyUk as frCopyUk, copyEn as frCopyEn } from "./fr/copy";
 import { content as enForUk } from "./en/uk";
 import { content as enForFr } from "./en/fr";
-import { content as enForEn } from "./en/en";
 import { glossaryHtml as enGlossaryUk } from "./en/glossary.uk";
 import { glossaryHtml as enGlossaryFr } from "./en/glossary.fr";
-import { glossaryHtml as enGlossaryEn } from "./en/glossary.en";
-import { copyUk as enCopyUk, copyFr as enCopyFr, copyEn as enCopyEn } from "./en/copy";
+import { copyUk as enCopyUk, copyFr as enCopyFr } from "./en/copy";
 import { content as ukForEn } from "./uk/en";
 import { content as ukForFr } from "./uk/fr";
 import { glossaryHtml as ukGlossaryEn } from "./uk/glossary.en";
@@ -73,11 +69,9 @@ export type MapBundle = { content: MapContent; glossaryHtml: string; copy: MapCo
 
 const MAPS: Partial<Record<`${Lang}-${Lang}`, MapBundle>> = {
   "uk-fr": { content: frForUk, glossaryHtml: frGlossaryUk, copy: frCopyUk },
-  "fr-fr": { content: frForFr, glossaryHtml: frGlossaryFr, copy: frCopyFr },
   "uk-en": { content: enForUk, glossaryHtml: enGlossaryUk, copy: enCopyUk },
   "fr-en": { content: enForFr, glossaryHtml: enGlossaryFr, copy: enCopyFr },
   "en-fr": { content: frForEn, glossaryHtml: frGlossaryEn, copy: frCopyEn },
-  "en-en": { content: enForEn, glossaryHtml: enGlossaryEn, copy: enCopyEn },
   "en-uk": { content: ukForEn, glossaryHtml: ukGlossaryEn, copy: ukCopyEn },
   "fr-uk": { content: ukForFr, glossaryHtml: ukGlossaryFr, copy: ukCopyFr },
 };
