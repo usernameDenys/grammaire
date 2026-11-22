@@ -8,8 +8,9 @@ import {
   LANGS,
   NATIVE_COOKIE,
   cookieAttrs,
-  hasMap,
   isLang,
+  mapPath,
+  mapsFor,
   matchLang,
   type Lang,
   pairPath,
@@ -19,9 +20,9 @@ import { getDict } from "@/lib/i18n/ui";
 const SECTION_IDS = ["now", "map-section", "road", "practice", "plan", "gloss"] as const;
 const THEME_KEY = "frmap-theme";
 
-type Props = { native: Lang; target: Lang; sections: boolean };
+type Props = { native: Lang; target: Lang };
 
-export default function SiteHeader({ native, target, sections }: Props) {
+export default function SiteHeader({ native, target }: Props) {
   const dict = getDict(native);
   const d = dict.site;
   const labels: Record<(typeof SECTION_IDS)[number], string> = {
@@ -44,7 +45,6 @@ export default function SiteHeader({ native, target, sections }: Props) {
 
   // Highlight the nav item for the section currently on screen.
   useEffect(() => {
-    if (!sections) return;
     const els = SECTION_IDS.map((id) => document.getElementById(id)).filter(Boolean) as HTMLElement[];
     if (!els.length) return;
     const io = new IntersectionObserver(
@@ -56,7 +56,7 @@ export default function SiteHeader({ native, target, sections }: Props) {
     );
     els.forEach((el) => io.observe(el));
     return () => io.disconnect();
-  }, [sections]);
+  }, []);
 
   const toggleTheme = () => {
     const next = !dark;
@@ -77,7 +77,7 @@ export default function SiteHeader({ native, target, sections }: Props) {
   };
 
   return (
-    <header className={`site-header${sections ? "" : " no-nav"}`}>
+    <header className="site-header">
       <div className="sh-inner">
         <a
           className="sh-brand"
@@ -94,16 +94,14 @@ export default function SiteHeader({ native, target, sections }: Props) {
           </svg>
           {d.brand}
         </a>
-        {sections && (
-          <nav className="sh-nav" aria-label={d.navAria}>
-            {SECTION_IDS.map((id) => (
-              <a key={id} href={`#${id}`} onClick={(e) => go(e, id)} aria-current={active === id ? "true" : undefined}>
-                {labels[id]}
-              </a>
-            ))}
-          </nav>
-        )}
-        {sections && <StudyTimer label={dict.map.timerAria} />}
+        <nav className="sh-nav" aria-label={d.navAria}>
+          {SECTION_IDS.map((id) => (
+            <a key={id} href={`#${id}`} onClick={(e) => go(e, id)} aria-current={active === id ? "true" : undefined}>
+              {labels[id]}
+            </a>
+          ))}
+        </nav>
+        <StudyTimer label={dict.map.timerAria} />
         <div className="sh-tools">
           <LangSwitch native={native} target={target} />
           <button
@@ -199,7 +197,7 @@ function LangSwitch({ native, target }: { native: Lang; target: Lang }) {
           <div className="lang-group">
             <span className="lang-head">{d.langNative}</span>
             <a
-              href={pairPath(system, target)}
+              href={mapPath(system, target)}
               onClick={() => (document.cookie = `${NATIVE_COOKIE}=; path=/; max-age=0`)}
               aria-current={auto ? "true" : undefined}
             >
@@ -212,7 +210,7 @@ function LangSwitch({ native, target }: { native: Lang; target: Lang }) {
             {LANGS.map((l) => (
               <a
                 key={l}
-                href={pairPath(l, target)}
+                href={mapPath(l, target)}
                 lang={l}
                 onClick={() => (document.cookie = `${NATIVE_COOKIE}=${l}; ${cookieAttrs}`)}
                 aria-current={!auto && l === native ? "true" : undefined}
@@ -224,11 +222,10 @@ function LangSwitch({ native, target }: { native: Lang; target: Lang }) {
           </div>
           <div className="lang-group">
             <span className="lang-head">{d.langTarget}</span>
-            {LANGS.map((l) => (
+            {mapsFor(native).map((l) => (
               <a key={l} href={pairPath(native, l)} aria-current={l === target ? "true" : undefined}>
                 <span className="lang-code">{CODE[l]}</span>
                 {d.langName[l]}
-                {!hasMap(native, l) && <span className="lang-soon">{d.soon}</span>}
               </a>
             ))}
           </div>
