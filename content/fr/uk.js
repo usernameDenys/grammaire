@@ -955,4 +955,11 @@ const WHY = {
 "S5<N5":"обидві теми — інструменти письмового стилю, і вони працюють разом."
 };
 
-export const content = { DOM, PHASES, T, EX, LONG, WHY, SOURCES };
+/* recommended order of all 30 topics; within a stage, prerequisites come first */
+const ROUTE = ["V1","N1","O1","S1","P1","M1", "V2","M2","N2","P2","S2","O2", "V3","O3","M3","N3","S3","P3", "V4","O4","M4","S4","P4","N4", "M5","O5","N5","S5","P5","V5"];
+/* fix-the-mistake answers in these topics also check spacing (French punctuation) */
+const STRICT = ["S2"];
+/* localStorage key prefix: progress is kept per target language */
+const STORE = "frmap-";
+
+export const content = { DOM, PHASES, T, EX, LONG, WHY, SOURCES, ROUTE, STRICT, STORE };
