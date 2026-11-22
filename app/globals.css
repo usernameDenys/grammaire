@@ -433,7 +433,6 @@ html.drawer-lock{overflow:hidden}
 .sf-col h3{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:4px}
 .sf-col a{color:var(--muted);text-decoration:none;overflow-wrap:anywhere;transition:color .15s}
 .sf-col a:hover,.sf-name:hover{color:var(--accent)}
-.sf-note{font-size:13.5px;color:var(--faint)}
 .sf-social{display:flex;gap:8px;margin-top:4px}
 .sf-social a{width:36px;height:36px;border-radius:8px;border:1px solid var(--hair-2);display:grid;place-items:center;color:var(--ink);transition:border-color .15s,color .15s}
 .sf-social a:hover{border-color:var(--accent);color:var(--accent)}

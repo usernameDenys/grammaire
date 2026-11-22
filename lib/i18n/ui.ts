@@ -20,11 +20,10 @@ const uk = {
   },
   footer: {
     about:
-      "Grammar Maps — інтерактивні карти граматики. Проєкт створив Denys Holenko — веброзробник-фрилансер. Сайти на замовлення для незалежних фахівців і малого бізнесу.",
+      "Grammar Maps — інтерактивні карти граматики. Проєкт створив Denys Holenko.",
     mySite: "Мій сайт",
     navHeading: "Навігація",
     contactHeading: "Контакт",
-    location: "Франція · віддалено",
     stored: "Прогрес зберігається у твоєму браузері",
   },
   meta: {
@@ -39,8 +38,6 @@ const uk = {
     cta: "Відкрити карту французької",
   },
   map: {
-    badge: "Французька граматика · 30 тем · 5 етапів",
-    titleHtml: "Карта французької <em>граматики</em>.",
     lead: "30 тем у 6 розділах, розкладених на 5 етапів. Рядок карти — етап маршруту, кольорова лінія — розділ, пунктир — що варто знати перед темою.",
     progDone: "Пройдено",
     nextBtn: "Вчити зараз →",
@@ -49,7 +46,6 @@ const uk = {
     statWeek: "7 днів",
     statTotal: "Всього",
     glossTitle: "Довідник термінів",
-    glossSub: "частини мови, особи, ролі в реченні, дієслівні терміни · українською та французькою",
     planTitle: "Мій план",
     planHours: "Годин на тиждень",
     planDaily: "Ціль на день, хв",
@@ -66,8 +62,6 @@ const uk = {
     legendOrder: "порядок вивчення",
     legendDash: "тема спирається на іншу тему",
     mapAria: "Карта граматичних тем",
-    mapHint:
-      "Читай карту зверху вниз: рядок — це етап. Усередині рядка йди за номерами на станціях, вони стрибають між колонками. Колонку до кінця проходити не треба. Пунктир між станціями означає, що нижня тема використовує знання з верхньої: наприклад, Conditionnel бере закінчення з Imparfait. Натисни на станцію, щоб підсвітити її зв'язки й прочитати пояснення в панелі. Червона та бірюзова лінії (орфографія і речення) найважливіші для письма.",
     roadEyebrow: "Маршрут",
     roadTitleHtml: "Від першої теми <em>до тридцятої</em>.",
     roadLead:
@@ -83,22 +77,9 @@ const uk = {
       "Познач тему як вивчену. Помилки, що повторюються, виписуй в окремий список.",
     ],
     weekTitle: "Приклад тижня · близько 2 годин",
-    weekItemsHtml: [
-      "<b>2 × 30 хв</b> — нова тема з карти.",
-      "<b>1 × 20 хв</b> — диктант (dictée) на рівні B1–B2.",
-      "<b>1 × 45 хв</b> — письмове завдання етапу, потім самоперевірка.",
-      "<b>щодня 5 хв</b> — повторення списку власних помилок.",
-    ],
     weekNote: "Темп і щоденну ціль можна змінити в блоці «Мій план» угорі сторінки.",
     timeTitle: "Час навчання · 7 днів",
     timeNote: "Таймер рахує час на ту тему, яка відкрита. Якщо 30 хвилин не було жодної дії на сторінці, він ставить паузу й не зараховує цей проміжок.",
-    sourcesTitle: "Джерела для практики",
-    sources: {
-      tv5: "вправи та диктанти за рівнями",
-      voltaire: "тренажер орфографії",
-      bescherelle: "дієвідмінювання",
-      fle: "вправи за темами",
-    },
     timerAria: "Таймер навчання",
     topicLabel: "Тема",
     topicAria: "Тема граматики",
@@ -218,11 +199,10 @@ const en: Dict = {
   },
   footer: {
     about:
-      "Grammar Maps — interactive grammar maps. Made by Denys Holenko, a freelance web developer building custom websites for independents and small businesses.",
+      "Grammar Maps — interactive grammar maps. Made by Denys Holenko.",
     mySite: "My website",
     navHeading: "Navigation",
     contactHeading: "Contact",
-    location: "France · remote",
     stored: "Progress is stored in your browser",
   },
   meta: {
@@ -237,8 +217,6 @@ const en: Dict = {
     cta: "Open the French map",
   },
   map: {
-    badge: "French grammar · 30 topics · 5 stages",
-    titleHtml: "French grammar <em>map</em>.",
     lead: "30 topics in 6 sections, laid out in 5 stages. A map row is a stage of the route, a coloured line is a section, a dashed line shows what to know before a topic.",
     progDone: "Completed",
     nextBtn: "Learn now →",
@@ -247,7 +225,6 @@ const en: Dict = {
     statWeek: "7 days",
     statTotal: "Total",
     glossTitle: "Glossary",
-    glossSub: "parts of speech, persons, sentence roles, verb terms · in Ukrainian and French",
     planTitle: "My plan",
     planHours: "Hours per week",
     planDaily: "Daily goal, min",
@@ -264,8 +241,6 @@ const en: Dict = {
     legendOrder: "learning order",
     legendDash: "topic builds on another topic",
     mapAria: "Map of grammar topics",
-    mapHint:
-      "Read the map top to bottom: a row is a stage. Within a row, follow the numbers on the stations — they jump between columns. You don't need to finish a column. A dashed line between stations means the lower topic uses knowledge from the upper one: for example, Conditionnel takes its endings from Imparfait. Tap a station to highlight its links and read the explanation in the panel. The red and teal lines (spelling and sentence) matter most for writing.",
     roadEyebrow: "Route",
     roadTitleHtml: "From the first topic <em>to the thirtieth</em>.",
     roadLead:
@@ -281,22 +256,9 @@ const en: Dict = {
       "Mark the topic as learned. Keep recurring mistakes in a separate list.",
     ],
     weekTitle: "Sample week · about 2 hours",
-    weekItemsHtml: [
-      "<b>2 × 30 min</b> — a new topic from the map.",
-      "<b>1 × 20 min</b> — a dictation (dictée) at B1–B2 level.",
-      "<b>1 × 45 min</b> — the stage writing task, then self-check.",
-      "<b>5 min daily</b> — review your own list of mistakes.",
-    ],
     weekNote: "Pace and daily goal can be changed in “My plan” at the top of the page.",
     timeTitle: "Study time · 7 days",
     timeNote: "The timer counts time on the open topic. After 30 minutes without any activity on the page it pauses and doesn't count that stretch.",
-    sourcesTitle: "Practice resources",
-    sources: {
-      tv5: "exercises and dictations by level",
-      voltaire: "spelling trainer",
-      bescherelle: "verb conjugation",
-      fle: "exercises by topic",
-    },
     timerAria: "Study timer",
     topicLabel: "Topic",
     topicAria: "Grammar topic",
@@ -409,11 +371,10 @@ const fr: Dict = {
   },
   footer: {
     about:
-      "Grammar Maps — des cartes de grammaire interactives. Projet créé par Denys Holenko, développeur web freelance : des sites sur mesure pour les indépendants et les petites entreprises.",
+      "Grammar Maps — des cartes de grammaire interactives. Projet créé par Denys Holenko.",
     mySite: "Mon site",
     navHeading: "Navigation",
     contactHeading: "Contact",
-    location: "France · à distance",
     stored: "La progression est enregistrée dans ton navigateur",
   },
   meta: {
@@ -428,8 +389,6 @@ const fr: Dict = {
     cta: "Ouvrir la carte du français",
   },
   map: {
-    badge: "Grammaire française · 30 thèmes · 5 étapes",
-    titleHtml: "Carte de la <em>grammaire</em> française.",
     lead: "30 thèmes en 6 sections, répartis en 5 étapes. Une ligne de la carte est une étape du parcours, une ligne de couleur une section, les pointillés indiquent ce qu'il faut savoir avant un thème.",
     progDone: "Terminé",
     nextBtn: "Apprendre →",
@@ -438,7 +397,6 @@ const fr: Dict = {
     statWeek: "7 jours",
     statTotal: "Total",
     glossTitle: "Glossaire",
-    glossSub: "parties du discours, personnes, fonctions dans la phrase, termes verbaux",
     planTitle: "Mon plan",
     planHours: "Heures par semaine",
     planDaily: "Objectif par jour, min",
@@ -455,8 +413,6 @@ const fr: Dict = {
     legendOrder: "ordre d'apprentissage",
     legendDash: "un thème s'appuie sur un autre",
     mapAria: "Carte des thèmes de grammaire",
-    mapHint:
-      "Lis la carte de haut en bas : une rangée est une étape. Dans une rangée, suis les numéros des stations : ils sautent d'une colonne à l'autre. Inutile de finir une colonne. Les pointillés entre deux stations signifient que le thème du bas utilise celui du haut : par exemple, le conditionnel reprend les terminaisons de l'imparfait. Touche une station pour mettre ses liens en évidence et lire l'explication dans le panneau. Les lignes rouge et turquoise (orthographe et phrase) comptent le plus pour l'écrit.",
     roadEyebrow: "Parcours",
     roadTitleHtml: "Du premier thème <em>au trentième</em>.",
     roadLead:
@@ -472,22 +428,9 @@ const fr: Dict = {
       "Marque le thème comme appris. Note les erreurs récurrentes dans une liste à part.",
     ],
     weekTitle: "Exemple de semaine · environ 2 heures",
-    weekItemsHtml: [
-      "<b>2 × 30 min</b> — un nouveau thème de la carte.",
-      "<b>1 × 20 min</b> — une dictée de niveau B1–B2.",
-      "<b>1 × 45 min</b> — la tâche écrite de l'étape, puis autocorrection.",
-      "<b>5 min par jour</b> — relire ta liste d'erreurs.",
-    ],
     weekNote: "Le rythme et l'objectif quotidien se changent dans « Mon plan » en haut de la page.",
     timeTitle: "Temps d'étude · 7 jours",
     timeNote: "Le minuteur compte le temps passé sur le thème ouvert. Après 30 minutes sans aucune action sur la page, il se met en pause et ne compte pas cette période.",
-    sourcesTitle: "Ressources pour pratiquer",
-    sources: {
-      tv5: "exercices et dictées par niveau",
-      voltaire: "entraînement à l'orthographe",
-      bescherelle: "conjugaison",
-      fle: "exercices par thème",
-    },
     timerAria: "Minuteur d'étude",
     topicLabel: "Thème",
     topicAria: "Thème de grammaire",

@@ -3,13 +3,15 @@
 // The study timer lives in the site header (components/SiteHeader.tsx).
 
 import type { Dict } from "@/lib/i18n/ui";
+import type { MapCopy } from "@/content";
 
-export function buildMarkup(m: Dict["map"], glossaryHtml: string): string {
+// `c` is the copy that depends on the target language (see content/<target>/copy.ts).
+export function buildMarkup(m: Dict["map"], c: MapCopy, glossaryHtml: string): string {
   return `<div class="wrap">
   <header class="hero">
     <div class="title">
-      <span class="badge"><i></i>${m.badge}</span>
-      <h1>${m.titleHtml}</h1>
+      <span class="badge"><i></i>${c.badge}</span>
+      <h1>${c.titleHtml}</h1>
       <p>${m.lead}</p>
     </div>
     <div class="prog card">
@@ -19,7 +21,7 @@ export function buildMarkup(m: Dict["map"], glossaryHtml: string): string {
     </div>
   </header>
   <details class="gloss" id="gloss">
-    <summary><b>${m.glossTitle}</b><span>${m.glossSub}</span></summary>
+    <summary><b>${m.glossTitle}</b><span>${c.glossSub}</span></summary>
     ${glossaryHtml}
   </details>
 
@@ -55,7 +57,7 @@ export function buildMarkup(m: Dict["map"], glossaryHtml: string): string {
         </div>
       </div>
       <div class="mapscroll"><svg id="map" role="group" aria-label="${m.mapAria}"></svg></div>
-      <div class="maphint">${m.mapHint}</div>
+      <div class="maphint">${c.mapHint}</div>
   </div>
 
   <section class="road" id="road">
@@ -84,7 +86,7 @@ export function buildMarkup(m: Dict["map"], glossaryHtml: string): string {
     <div class="box">
       <h3>${m.weekTitle}</h3>
       <ul>
-        ${m.weekItemsHtml.map((s) => `<li>${s}</li>`).join("\n        ")}
+        ${c.weekItemsHtml.map((s) => `<li>${s}</li>`).join("\n        ")}
       </ul>
       <p>${m.weekNote}</p>
     </div>
@@ -94,12 +96,9 @@ export function buildMarkup(m: Dict["map"], glossaryHtml: string): string {
       <p>${m.timeNote}</p>
     </div>
     <div class="box">
-      <h3>${m.sourcesTitle}</h3>
+      <h3>${c.practiceTitle}</h3>
       <ul>
-        <li><a href="https://apprendre.tv5monde.com/fr" target="_blank" rel="noopener">TV5Monde Apprendre</a> — ${m.sources.tv5}</li>
-        <li><a href="https://www.projet-voltaire.fr/" target="_blank" rel="noopener">Projet Voltaire</a> — ${m.sources.voltaire}</li>
-        <li><a href="https://bescherelle.com/" target="_blank" rel="noopener">Bescherelle</a> — ${m.sources.bescherelle}</li>
-        <li><a href="https://www.lepointdufle.net/" target="_blank" rel="noopener">Le point du FLE</a> — ${m.sources.fle}</li>
+        ${c.practice.map((p) => `<li><a href="${p.url}" target="_blank" rel="noopener">${p.name}</a> — ${p.desc}</li>`).join("\n        ")}
       </ul>
     </div>
   </div>

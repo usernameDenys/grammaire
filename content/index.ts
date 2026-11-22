@@ -1,18 +1,70 @@
 // Grammar map content per language pair (native → target).
-// Each map ships its topics/explanations/exercises (MapContent) and a glossary (HTML).
+// Each map ships its topics/explanations/exercises (MapContent), a glossary (HTML)
+// and the page copy that depends on the target language (MapCopy).
 
 import type { Lang } from "@/lib/i18n/config";
 import { content as frForUk } from "./fr/uk";
-import { glossaryHtml as frGlossaryUk } from "./fr/glossary.uk";
 import { content as frForFr } from "./fr/fr";
+import { glossaryHtml as frGlossaryUk } from "./fr/glossary.uk";
 import { glossaryHtml as frGlossaryFr } from "./fr/glossary.fr";
+import { copyUk as frCopyUk, copyFr as frCopyFr } from "./fr/copy";
+import { content as enForUk } from "./en/uk";
+import { content as enForFr } from "./en/fr";
+import { glossaryHtml as enGlossaryUk } from "./en/glossary.uk";
+import { glossaryHtml as enGlossaryFr } from "./en/glossary.fr";
+import { copyUk as enCopyUk, copyFr as enCopyFr } from "./en/copy";
 
-export type MapContent = typeof frForUk;
-export type MapBundle = { content: MapContent; glossaryHtml: string };
+/** A map column (grammar section). `fr` is its name in the target language (historical key). */
+type Section = { fr: string; gloss: string; c: string };
+type Phase = { n: number; name: string; goal: string; task: string };
+// Shapes are written loosely (arrays, not tuples) because they are inferred from plain JS files.
+/** [question, options, index of the right option, explanation] */
+type Quiz = (string | number | string[])[];
+/** [wrong sentence, corrected sentence, hint] */
+type Fix = string[];
+/** A topic. `fr` is its short name in the target language (historical key). */
+type Topic = {
+  id: string; d: string; p: number; fr: string; gloss: string; t: string; s: string;
+  /** rules (cheat sheet); e: [example, translation]; x: [wrong, right, why] */
+  r: string[]; e: string[][]; x: string[]; q: Quiz[]; pre: string[];
+};
+
+export type MapContent = {
+  DOM: Record<string, Section>;
+  PHASES: Phase[];
+  T: Topic[];
+  EX: Record<string, { q: Quiz[]; c: Fix[] }>;
+  /** detailed explanation per topic, in the small markup described in content files */
+  LONG: Record<string, string>;
+  /** why topic B builds on topic A, keyed "B<A" */
+  WHY: Record<string, string>;
+  /** further reading per topic: [title, url] */
+  SOURCES: Record<string, string[][]>;
+  /** recommended order of all topics */
+  ROUTE: string[];
+  /** topics whose fix-the-mistake answers also check spacing */
+  STRICT: string[];
+  /** localStorage key prefix, one per target language */
+  STORE: string;
+};
+
+export type MapCopy = {
+  badge: string;
+  titleHtml: string;
+  glossSub: string;
+  mapHint: string;
+  weekItemsHtml: string[];
+  practiceTitle: string;
+  practice: { name: string; url: string; desc: string }[];
+};
+
+export type MapBundle = { content: MapContent; glossaryHtml: string; copy: MapCopy };
 
 const MAPS: Partial<Record<`${Lang}-${Lang}`, MapBundle>> = {
-  "uk-fr": { content: frForUk, glossaryHtml: frGlossaryUk },
-  "fr-fr": { content: frForFr, glossaryHtml: frGlossaryFr },
+  "uk-fr": { content: frForUk, glossaryHtml: frGlossaryUk, copy: frCopyUk },
+  "fr-fr": { content: frForFr, glossaryHtml: frGlossaryFr, copy: frCopyFr },
+  "uk-en": { content: enForUk, glossaryHtml: enGlossaryUk, copy: enCopyUk },
+  "fr-en": { content: enForFr, glossaryHtml: enGlossaryFr, copy: enCopyFr },
 };
 
 export const getMap = (native: Lang, target: Lang): MapBundle | null => MAPS[`${native}-${target}`] ?? null;

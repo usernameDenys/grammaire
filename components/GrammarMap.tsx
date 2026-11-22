@@ -11,7 +11,7 @@ export default function GrammarMap({ native, target }: { native: Lang; target: L
   const d = getDict(native);
   const map = getMap(native, target);
   if (!map) throw new Error(`No grammar map for ${native} → ${target}`);
-  const html = useMemo(() => buildMarkup(d.map, map.glossaryHtml), [d, map]);
+  const html = useMemo(() => buildMarkup(d.map, map.copy, map.glossaryHtml), [d, map]);
 
   useEffect(() => {
     initApp(d.app, map.content);
